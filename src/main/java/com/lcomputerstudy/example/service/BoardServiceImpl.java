@@ -9,7 +9,7 @@ import com.lcomputerstudy.example.domain.Board;
 import com.lcomputerstudy.example.mapper.BoardMapper;
 
 @Service("BoardServicelmpl")
-public class BoardServicelmpl implements BoardService{
+public class BoardServiceImpl implements BoardService{
 
 	@Autowired BoardMapper boardmapper;
 	@Override

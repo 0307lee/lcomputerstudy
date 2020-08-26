@@ -1,16 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Á»µÇ¶÷¤¤ÀÌ ¶ó¤Ç¤Ì¤±¤¤ÀÌ·ë¤¤ÀÌ¤¿·ë´×</h1>
-	<h1>ÀÌ°Ô ½ÃºÐ¤±¤·¶ó¤Ó¤±¤¤¤·¤© ¤¸¤¤ ¿¹¹ÎÇØ</h1>
-	<h2>sdf</h2>
+	<h1>ë›°ì–´ì“°ê¸° ì£¼ì˜</h1>
+	<h1></h1>
+	<div>
+		<a href="/login">ë¡œê·¸ì¸</a>
+		<a href="/beforeSignUp">íšŒì›ê°€ìž…</a>
+	</div>
+	
 	<div>
 		<div>id</div>
 		<div>title</div>
