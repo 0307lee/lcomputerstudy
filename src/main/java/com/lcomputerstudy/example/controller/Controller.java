@@ -18,7 +18,7 @@ import com.lcomputerstudy.example.service.UserService;
 @org.springframework.stereotype.Controller
 public class Controller {
 
-	private final Logger logger =LoggerFactory.getLogger(this.getClass());
+	//private final Logger logger =LoggerFactory.getLogger(this.getClass());
 	@Autowired BoardService boardservice;
 	@Autowired UserService userservice;
 
@@ -27,6 +27,9 @@ public class Controller {
 		
 		List<Board> list =boardservice.selectBoardList();
 		model.addAttribute("list", list);
+//		logger.debug("debug");
+//		logger.info("info");
+//		logger.error("error");
 		return "/index";
 	}
 	
@@ -62,7 +65,7 @@ public class Controller {
 	}
 	
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value="/admin")
+	@RequestMapping(value="/user/info")
 	public String userinfo(Model model) {
 		return "/user_info";
 	}

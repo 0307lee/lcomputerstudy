@@ -37,8 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-		
-//	ÀÎÁõ°ú ±ÇÇÑ
+
+//ì—¬ê¸´ì „ë¶€ë‹¤. http[í´ë˜ìŠ¤].ì•ˆì˜ form~~.author.~~~ê°™ì€[ë©”ì†Œë“œ]ë¥¼ í˜¸ì¶œí•œê±°ì•¼
+//	ë¡œê·¸ì¸ ì„¤ì •
 	 http
 	 .authorizeRequests()
 	 	.antMatchers("/user/**").authenticated()
@@ -46,21 +47,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	 	.anyRequest().permitAll()
 	 	.and()
 	 	
-// 	Æû ·Î±×ÀÎ ¼³Á¤
+// 	ã…í›„
 	 .formLogin()
 	 	.loginPage("/login")
 	 	.loginProcessingUrl("/loginPro")
 	 	.defaultSuccessUrl("/",true)
 	 	.permitAll()
 	 	.and()
-//	 ·Î±×¾Æ¿ô	
+//ã…‡ë¡œ
 	 .logout()
 	 	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 	 	.logoutSuccessUrl("/")
 	 	.invalidateHttpSession(true)
 	 	.deleteCookies("JSESSIONID","remember-me")
 	 	.and()
-//	 ¸®¸â¹ö¹Ì ¼³Á¤	
+//	ã…‡ë¡œ
 	 .rememberMe()
 	 	.key("myWeb")
 	 	.rememberMeParameter("remeber-me")
@@ -70,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	 .exceptionHandling()
 	 	.accessDeniedPage("/denied")
 	 	.and()
-//	 sesion°ü¸®
+//	 sesion
 	 .sessionManagement()	
 	 	.sessionCreationPolicy(SessionCreationPolicy.NEVER)
 	 	.invalidSessionUrl("/login")
