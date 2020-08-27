@@ -38,8 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 
-//여긴전부다. http[클래스].안의 form~~.author.~~~같은[메소드]를 호출한거야
-//	로그인 설정
+//All things consist of Class and Method
 	 http
 	 .authorizeRequests()
 	 	.antMatchers("/user/**").authenticated()
@@ -47,21 +46,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	 	.anyRequest().permitAll()
 	 	.and()
 	 	
-// 	ㅍ후
+//login
 	 .formLogin()
 	 	.loginPage("/login")
 	 	.loginProcessingUrl("/loginPro")
 	 	.defaultSuccessUrl("/",true)
 	 	.permitAll()
 	 	.and()
-//ㅇ로
+//logout
 	 .logout()
 	 	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 	 	.logoutSuccessUrl("/")
 	 	.invalidateHttpSession(true)
 	 	.deleteCookies("JSESSIONID","remember-me")
 	 	.and()
-//	ㅇ로
+//remember or not
 	 .rememberMe()
 	 	.key("myWeb")
 	 	.rememberMeParameter("remeber-me")
