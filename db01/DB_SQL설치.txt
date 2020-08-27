@@ -1,0 +1,31 @@
+==============================
+설치 
+
+DB_SQL설치
+	https://downloads.mariadb.org/mariadb/10.4.13/
+
+mariadb JDBC
+	https://mariadb.com/downloads/
+
+mysqlworkbench or HeidiSQL
+	https://mysql-workbench.en.softonic.com/download
+
+
+==============================
+mariadb heidisql 사용법
+>쿼리에다가 내용 적기  (참고 사전: https://www.w3schools.com/sql/sql_insert.asp)
+>primary key 부여 시, 중복피하기: 기본값 >AUTO_INCREME로 변경  (HOW? heidisql auto increment primary key 검색)
+==============================
+200729 DO
+DB생성 HeidiSQL, workbench 등 활용
+
+jdbc
+
+회원가입& 로그인
+
+>>mvc로 변환
+
+>>spring
+==============================
+
+참고
