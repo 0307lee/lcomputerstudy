@@ -18,6 +18,8 @@ public class User implements UserDetails {
 		  `u_isEnabled` tinyint(4) DEFAULT NULL,
 	 */
 	private String username;
+	
+
 	private String password;
 	private String uName;
 	private String uDateTime;
@@ -103,5 +105,13 @@ public class User implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return isEnabled;
+	}
+	
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", uName=" + uName + ", uDateTime=" + uDateTime
+				+ ", authorities=" + authorities + ", isAccountNonExpired=" + isAccountNonExpired
+				+ ", isAccountNonLocked=" + isAccountNonLocked + ", isCredentialNonExpired=" + isCredentialNonExpired
+				+ ", isEnabled=" + isEnabled + "]";
 	}
 }

@@ -1,7 +1,11 @@
 package com.lcomputerstudy.example.controller;
 
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
@@ -13,7 +17,8 @@ import com.lcomputerstudy.example.service.UserService;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-	
+
+	private final Logger logger =LoggerFactory.getLogger(this.getClass());
 	@Autowired BoardService boardservice;
 	@Autowired UserService userservice;
 
@@ -50,4 +55,24 @@ public class Controller {
 		
 		return "/login";
 	}
+	
+	@RequestMapping(value= "/login")
+	public String beforeLogin(Model model) {
+		return "/login";
+	}
+	
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value="/admin")
+	public String userinfo(Model model) {
+		return "/user_info";
+	}
+	
+	@RequestMapping(value= "/denied")
+	public String denied(Model model) {
+		return "/denied";
+	}
+	
+	
+	
+	
 }

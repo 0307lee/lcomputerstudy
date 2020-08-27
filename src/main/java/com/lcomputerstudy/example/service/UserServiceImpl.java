@@ -31,8 +31,7 @@ public class UserServiceImpl implements UserService{
 		List<GrantedAuthority>authorities =userMapper.readAuthorities(username);
 		return authorities;
 	}
-
-
+	
 	@Override
 	public void createUser(User user) {
 		// TODO Auto-generated method stub
@@ -51,5 +50,4 @@ public class UserServiceImpl implements UserService{
 		return userMapper.readUser(username);
 	}
 
-	
 }
