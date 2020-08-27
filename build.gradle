@@ -21,10 +21,10 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-jdbc'
 	implementation 'org.springframework.security:spring-security-taglibs'
 	runtimeOnly 'mysql:mysql-connector-java'
-	//testImplementation('org.springframework.boot:spring-boot-starter-test') {
-	//	exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	//}
-	//testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
 	
 	//JSP ¿¬µ¿
 	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
