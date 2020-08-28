@@ -7,11 +7,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>HOME</title>
 </head>
 <body>
 	<h1>뛰어쓰기 주의</h1>
-	<h1></h1>
+	<h6>clean>build>(lib.재요청)>boot</h6>
 	<div>
 		<sec:authorize access="isAnonymous()">
 			<a href="/login">로그인</a>
