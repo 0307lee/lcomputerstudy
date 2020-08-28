@@ -22,7 +22,7 @@
 			<sec:authentication property="principal" var="principal"/>
 			<h2>${principal }</h2>
 		</sec:authorize>
-	<p>로그인하면 보인다</p>
+	<p>로그인하면 안보이는 정보가 보인다</p>
 	</div>
 	<div>
 		<sec:authorize access="isAuthenticated()">
@@ -30,7 +30,7 @@
 			<a href="/admin">관리자</a>
 		</sec:authorize>
 	</div>
-	<p>로그인하면 보인다</p>
+	<p>로그인하면 안보이는 정보가 보인다</p>
 	<br>
 	<div>
 		<div>id</div>
