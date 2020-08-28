@@ -18,7 +18,28 @@
   	<div class="row">
   		<div class="col-md-1"><h1>뛰어쓰기 주의div>head<small>CSSstyle</small></h1></div>
   	</div>
-	<div class="well">뛰어쓰기 주의head</div>
+	<div class="well">
+1 wek brek?
+====================
+1 SW_basic
+			되돌아보기(JAVA AGAIN)
+			화면: 	CSS bootstrap
+			 
+			메뉴 추가생성: 	기능1차-단순up down (ex. 내 공부 게시판 만들기(메모장 출력), 로봇데이터 , 크롤링 데이터)
+						기능2차-통계화 (dif)
+
+//////////////////
+
+2 SW_programming
+			주식
+			크롤링
+			코딩쉽게
+			내 주사용만 사용하도록
+			opencv연동
+ 
+3 HW_?? SW??
+====================
+4 서버? 도메인 구축 시, sql데이터는 어디에 저장되니?</div>
 	<p class="text-warning" >Lee HTML_from 200714 to 200828</p>
 	<h1></h1>
 	<div>
