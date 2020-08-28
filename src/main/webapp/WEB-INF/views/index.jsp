@@ -3,14 +3,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>뛰어쓰기 주의</h1>
+	<div class="row">
+  		<div class="col-md-1">뛰어쓰기 주의div <small>CSSstyle</small></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-md-1"><h1>뛰어쓰기 주의div>head<small>CSSstyle</small></h1></div>
+  	</div>
+	<div class="well">뛰어쓰기 주의head</div>
+	<p class="text-warning" >Lee HTML_from 200714 to 200828</p>
 	<h1></h1>
 	<div>
 		<sec:authorize access="isAnonymous()">

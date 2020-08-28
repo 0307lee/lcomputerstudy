@@ -7,7 +7,7 @@
 <title>Login</title>
 </head>
 <body>
-	<h1>로그인</h1>
+	<h1>로그인_bootstrap</h1>
 		<form action ="/loginPro" method= "post">
 			<input type ="hidden" name ="${_csrf.parameterName}" value="${_csrf.token}">
 			<input type ="text" name="username" placeholder="id 입력해주세요">
