@@ -83,7 +83,7 @@
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">연봉체계</a></li>
+						<li><a href="/chart">연봉체계</a></li>
 						<li><a href="#">순수코딩</a></li>
 					</ul>
 				</div>
