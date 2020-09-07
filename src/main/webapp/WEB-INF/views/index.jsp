@@ -9,13 +9,17 @@
 	//	different Auto build system (maven, gradle)
 	//soln2. No korean? (bcz of, UTF etc..)	
  -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <%@include file="/WEB-INF/include/board_css.jsp"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/include/board.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -30,21 +34,24 @@
     <div class="row Well">
         <div class="page info col-md-9">
         <br>
-        Q1 다른사람 repository써보고싶은데 어떻게? (vang?)
-        Q2 연봉차트 넣기(view만)
+        Q0 에러나는거 우야나.
+        Q2 연봉차트 넣기(view만)(https://www.sw.or.kr/site/sw/ex/board/View.do?cbIdx=304&bcIdx=44509&searchExt1=)
         Q3 google keep 바로가기
-        Q4 블로그만들기(+ad?)
+        Q4 블로그만들기(+ad?)https://homzzang.com/
         <br>
         	<h4>TO DO LIST</h4>
 			1 SW_basic<br>&nbsp;
-						화면: 	CSS bootstrap<br>&nbsp;
+						CRUD <br>&nbsp;
+						기획 <br>&nbsp;
+						설계 <br>&nbsp;
+						개발 <br>&nbsp;
 						 <br>
 						메뉴 추가생성: <br>	&nbsp;
 								기능1차-단순up down (ex. 내 공부 게시판 만들기(메모장 출력), 로봇데이터 , 크롤링 데이터)<br>&nbsp;
 								기능2차-통계화 (dif)<br>&nbsp;&nbsp;
 								 <br>
 			2 HW?? SW??<br>&nbsp;
-				간단한것부터하자. 내앞에 놓인것 일단 쳐내고. 카테고리도 분류하고<br>&nbsp;
+				간단한것부터하자. 내 앞에 놓인것 일단 쳐내고. 카테고리도 분류하고<br>&nbsp;
 				<br>&nbsp;
 			====================<br>
 			<br>
@@ -73,7 +80,16 @@
 				<button type="button" class="btn btn-default">(미구현)순수코딩</button>
 				<button type="button" class="btn btn-default">(미구현)주사용</button>
 				<button type="button" class="btn btn-default">(미구현)opencv</button>
-				<button type="button" class="btn btn-default">(하지마)수익형블로그(ex.그누보드)</button>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						(하지마)수익형블로그
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">그누보드</a></li>
+						<li><a href="#">https://homzzang.com/</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
         <div class="BOARD col-md-8">			        	
