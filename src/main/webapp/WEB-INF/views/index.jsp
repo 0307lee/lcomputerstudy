@@ -62,51 +62,62 @@
     </div>
     <div class="row">
         <div class="CATEGORY col-md-2">카테고리 트리</div>
-        <div class="BOARD col-md-8"></div>
-        <div class="AD col-md-2"></div>
+        <div class="BOARD col-md-8">			        	
+			<div id="list">
+			      <b>게시판 (전체 글: (미구현)전체게시글수)</b>
+			</div>
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th width="10%">no</th>
+						<th width="50%">Title</th>	
+						<th width="10%">Writer</th>
+						<th width="20%">Date</th>
+						<th width="10%">View</th>
+					</tr>
+				<tbody>
+					<c:forEach var="list" items="${list}">
+						<tr>
+				  			<td>${list.bId}</td>
+				  			<td id="title">
+				  				&nbsp;&nbsp;
+								<!--
+					        	<c:if test="${article.depth > 0}">
+					           	&nbsp;&nbsp;
+								</c:if>
+								<a href="/bbs/content.bbs?articleNumber=${article.articleNumber}&pageNum=${pageNum}">${article.title}</a>
+								<c:if test="${article.hit >= 20}">
+								<span class="hit">hit!</span>
+								</c:if>-->
+							${list.bTitle}</td>
+							<td>${list.bWriter}</td>
+							<td>${list.bDateTime}</td>
+							<td>(미구현)조회수</td>
+						<tr>
+					</c:forEach>
+				</tbody>
+			</table>
+        </div>
+        <div class="AD col-md-2">
+        	<div class="well">
+			====광고예시1==========
+			</div>
+			<div class="well">
+			====광고예시2==========
+			</div>
+        </div>
     </div>
     
-</div>
-
-
-<div id="list">
-      <b>게시판 (전체 글: (미구현)전체게시글수)</b>
-    </div>
-
-<table class="table table-striped table-bordered table-hover">
-	<thead>
-		<tr>
-			<th width="10%">no</th>
-			<th width="50%">Title</th>	
-			<th width="10%">Writer</th>
-			<th width="20%">Date</th>
-			<th width="10%">View</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="list" items="${list}">
-			<tr>
-	  			<td>(미구현)번호</td>
-	  			<td id="title">
-	  				&nbsp;&nbsp;
-					<!--
-		        	<c:if test="${article.depth > 0}">
-		           	&nbsp;&nbsp;
-					</c:if>
-					<a href="/bbs/content.bbs?articleNumber=${article.articleNumber}&pageNum=${pageNum}">${article.title}</a>
-					<c:if test="${article.hit >= 20}">
-					<span class="hit">hit!</span>
-					</c:if>-->
-				${list.bTitle}</td>
-				<td>${list.bId}</td>
-				<td>${list.bDateTime}</td>
-				<td>(미구현)조회수</td>
-			<tr>
-		</c:forEach>
-	</tbody>
-</table>
 <div class="well">
-==========f==========
+======여기서부터==========
 </div>
+    <div class="row ENDING">
+        <div class="logo col-md-1"></div>
+        <div class="site info col-md-9"></div>
+        <div class="site map col-md-2"></div>
+    </div>
+</div>
+
+
 </body>
 </html>
