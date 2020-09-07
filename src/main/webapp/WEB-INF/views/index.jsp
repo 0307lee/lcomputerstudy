@@ -75,6 +75,7 @@
 						<th width="20%">Date</th>
 						<th width="10%">View</th>
 					</tr>
+				</thead>
 				<tbody>
 					<c:forEach var="list" items="${list}">
 						<tr>
