@@ -15,7 +15,7 @@
       text-align: right;
     }
      
-    /* Bootstrap 수정 */
+    /* Bootstrap */
     .table > thead {
       background-color: #b3c6ff;
     }
@@ -55,4 +55,19 @@
       30% {color: yellow;}
       100% {color:red; font-weight: bold;} */
     }
+    
+    .glyphicon.glyphicon {
+    font-size: 50px;
+	}
+	
+	.box {
+		width: 150px;
+		height: 150px;
+		background-color: #cccccc;
+		float: left;
+		margin-right: 10px;}
+		.visible {overflow: visible;}
+		.hide {overflow: hidden;}
+		.scroll {overflow: scroll;}
+		.auto {overflow: auto;}
   </style>
