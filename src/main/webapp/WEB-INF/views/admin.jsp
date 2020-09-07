@@ -10,6 +10,6 @@
 <title>Admin</title>
 </head>
 <body>
-	<h1>Admin PAGE</h1>
+	<h1>Admin jPAGE</h1>
 </body>
 </html>

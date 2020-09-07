@@ -10,7 +10,9 @@
 <title>chart</title>
 </head>
 <body>
-	<p>【SW기술자 평균 임금】
+	<h1>chart PAGE</h1>
+	<p>
+	SW기술자 평균 임금】
 
  
 
