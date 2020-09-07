@@ -27,22 +27,23 @@
     </div>
     <div class="row Well">
         <div class="page info col-md-9">
-		1 SW_basic<br>
-					되돌아보기(JAVA AGAIN)<br>
-					화면: 	CSS bootstrap<br>
-					 <br>
-					메뉴 추가생성: 	기능1차-단순up down (ex. 내 공부 게시판 만들기(메모장 출력), 로봇데이터 , 크롤링 데이터)<br>
-								기능2차-통계화 (dif)<br>
-		2 SW_programming<br>
-					주식<br>
-					크롤링<br>
-					코딩쉽게<br>
-					내 주사용만 사용하도록<br>
-					opencv연동<br>
-		 
-		3 HW_?? SW??<br>
-		====================<br>
-		4 서버? 도메인 구축 시, sql데이터는 어디에 저장되니?<br></div>
+			1 SW_basic<br>
+						되돌아보기(JAVA AGAIN)<br>
+						화면: 	CSS bootstrap<br>
+						 <br>
+						메뉴 추가생성: 	기능1차-단순up down (ex. 내 공부 게시판 만들기(메모장 출력), 로봇데이터 , 크롤링 데이터)<br>
+									기능2차-통계화 (dif)<br>
+			2 SW_programming<br>
+						주식<br>
+						크롤링<br>
+						코딩쉽게<br>
+						내 주사용만 사용하도록<br>
+						opencv연동<br>
+			 
+			3 HW_?? SW??<br>
+			====================<br>
+			4 서버? 도메인 구축 시, sql데이터는 어디에 저장되니?<br>
+		</div>
         <div class="Login col-md-3">
         	<sec:authorize access="isAnonymous()">
 				<a href="/login">로그인</a>
@@ -64,16 +65,10 @@
         <div class="BOARD col-md-8"></div>
         <div class="AD col-md-2"></div>
     </div>
-    <div class="row ENDING">
-        <div class="logo col-md-1"></div>
-        <div class="site info col-md-9"></div>
-        <div class="site map col-md-2"></div>
-    </div>
+    
 </div>
 
-<div class="well">
-====================
-</div>
+
 <div id="list">
       <b>게시판 (전체 글: (미구현)전체게시글수)</b>
     </div>
@@ -82,14 +77,14 @@
 	<thead>
 		<tr>
 			<th width="10%">no</th>
-			<th width="50%">Title</th>
+			<th width="50%">Title</th>	
 			<th width="10%">Writer</th>
 			<th width="20%">Date</th>
 			<th width="10%">View</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="article" items="${articles}" varStatus="status">
+		<c:forEach var="list" items="${list}">
 			<tr>
 	  			<td>(미구현)번호</td>
 	  			<td id="title">
@@ -104,12 +99,14 @@
 					</c:if>-->
 				${list.bTitle}</td>
 				<td>${list.bId}</td>
-				<td>(미구현)게시일자</td>
+				<td>${list.bDateTime}</td>
 				<td>(미구현)조회수</td>
 			<tr>
 		</c:forEach>
 	</tbody>
 </table>
-	
+<div class="well">
+==========f==========
+</div>
 </body>
 </html>

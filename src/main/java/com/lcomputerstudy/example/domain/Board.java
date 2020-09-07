@@ -1,5 +1,7 @@
 package com.lcomputerstudy.example.domain;
 
+import java.sql.Timestamp;
+
 public class Board {
 	private int bId;
 	private String bTitle;
