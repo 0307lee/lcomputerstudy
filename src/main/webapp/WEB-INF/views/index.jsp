@@ -82,7 +82,13 @@
 			</div>
 	        <div class="BOARD col-md-8">			        	
 				<div id="list">
-				      <b>게시판 (전체 글: (미구현)전체게시글수) 글쓰기</b>&nbsp;
+				      <b>게시판 (전체 글 갯수:) &nbsp;&nbsp;&nbsp;</b>
+				      <a class="navbar-brand" href="/user/writing">
+				      	<button type="button" class="btn btn-default btn-sm">글쓰기</button>
+				      </a>
+				       <a class="navbar-brand" href="/">
+				      	<button type="button" class="btn btn-default btn-sm">새로고침</button>
+				      </a>
 				</div>
 				<p></p>
 				<table class="table table-striped table-bordered table-hover">

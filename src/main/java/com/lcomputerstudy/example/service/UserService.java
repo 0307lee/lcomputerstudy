@@ -5,20 +5,20 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.lcomputerstudy.example.domain.User;;
+import com.lcomputerstudy.example.domain.UserVO;
 
 public interface UserService extends UserDetailsService {
 
-	//À¯ÀúÀÐ±â
-	public User readUser(String username);
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+	public UserVO readUser(String username);
 	
-	//À¯Àú»ý¼º
-	public void createUser(User user);
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public void createUser(UserVO user);
 	
-	//±ÇÇÑ »ý¼º
-	public void createAuthorities(User user);
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public void createAuthorities(UserVO user);
 	
-	//½ÃÅ¥¸®Æ¼ ±ÇÇÑ ¾ò±â
+	//ï¿½ï¿½Å¥ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	Collection<GrantedAuthority> getAuthorities(String username);
 
 }

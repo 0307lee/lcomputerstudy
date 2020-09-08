@@ -5,16 +5,16 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.lcomputerstudy.example.domain.User;
+import com.lcomputerstudy.example.domain.UserVO;
 
 @Mapper
 public interface UserMapper {
-//	À¯ÀúÀÐ±â
-	public User readUser(String username);
-//	À¯Àú»ý¼º
-	public void createUser(User user);
-//	±ÇÇÑÀÐ±â
+//	ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+	public UserVO readUser(String username);
+//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public void createUser(UserVO user);
+//	ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 	public List<GrantedAuthority> readAuthorities(String username);
-//	±ÇÇÑ»ý¼º
-	public void createAuthority(User user);
+//	ï¿½ï¿½ï¿½Ñ»ï¿½ï¿½ï¿½
+	public void createAuthority(UserVO user);
 }

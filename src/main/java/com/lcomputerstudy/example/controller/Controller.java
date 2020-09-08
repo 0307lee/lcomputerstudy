@@ -10,8 +10,8 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.lcomputerstudy.example.domain.Board;
-import com.lcomputerstudy.example.domain.User;
+import com.lcomputerstudy.example.domain.BoardVO;
+import com.lcomputerstudy.example.domain.UserVO;
 import com.lcomputerstudy.example.service.BoardService;
 import com.lcomputerstudy.example.service.UserService;
 
@@ -24,7 +24,7 @@ public class Controller {
 
 	@RequestMapping("/")
 	public String home(Model model) {
-		List<Board> list =boardservice.selectBoardList();
+		List<BoardVO> list =boardservice.selectBoardList();
 		model.addAttribute("list", list);
 		
 		logger.debug("debug");
@@ -40,7 +40,7 @@ public class Controller {
 	}
 	
 	@RequestMapping("/signup")
-	public String signup(User user) {
+	public String signup(UserVO user) {
 		//encoding PW
 		String encodedPassword =new BCryptPasswordEncoder().encode(user.getPassword());
 		
@@ -81,6 +81,14 @@ public class Controller {
 	public String chart(Model model) {
 		return "/user_chart";
 	}
+
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/writing")
+	public String writing(Model model) {
+		return "/user_writing";
+	}
+
+	
 	
 	
 }

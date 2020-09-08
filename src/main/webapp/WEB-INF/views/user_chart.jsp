@@ -2,37 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- CSS는 static에다가-->
-<link rel="stylesheet" href="/css/board.css">
-<!-- Jquerry 1.x 부트스트랩 자바스크립트사용하기위해서-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- 합쳐지고 최소화된 최신 자바스크립트 드랍사용하기위해서-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>chart</title>
-</head>
-<body>
-	<div class="row Title">
-        <div class="TITLE col-xs-12">
-        	<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="/">
-							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-						</a>
-					</div>
-				</div>
-				<p class="text-warning" >Lee HTML_from 200714 to 200907</p>
-			</nav>
-        </div>
-    </div>
+<jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
+
 	<h1>chart PAGE</h1>
-	<a href="/">Back To HOME</a><br>
 <img src="/images/table_salary.png" alt="table_salary" width="1000" height="1000">
 	<p>
 	https://www.sw.or.kr/site/sw/ex/board/View.do?cbIdx=304&bcIdx=44509&searchExt1=<br><br>
@@ -54,5 +27,5 @@ SW기술자 평균임금을 공표합니다. <br><br>
 <br>
  * IT직무 중 (25) IT감사는 유효응답 표본이 적어 활용시 유의해야함<br>
  [시행일] 2020년 1월 1일부터 2020년 12월 31일까지 적용</p><br>
-</body>
-</html>
+ 
+<jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>
