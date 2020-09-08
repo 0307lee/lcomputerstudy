@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception{
 
 //All things consist of Class and Method
+	//Right and Chk.Authorize
 	 http
 	 .authorizeRequests()
 	 	.antMatchers("/user/**").authenticated()

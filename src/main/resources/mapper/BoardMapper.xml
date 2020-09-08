@@ -9,4 +9,8 @@
 				b_datetime as bDateTime
 		FROM	lc_board
 	</select>
+	<select id="getBoardListCount" resultType="int">
+		SELECT	count(b_id) as cnt_b_id
+		FROM	lc_board
+	</select>
 </mapper>

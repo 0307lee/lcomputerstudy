@@ -24,12 +24,13 @@ public class Controller {
 
 	@RequestMapping("/")
 	public String home(Model model) {
-		
 		List<Board> list =boardservice.selectBoardList();
 		model.addAttribute("list", list);
+		
 		logger.debug("debug");
 		logger.info("info");
 		logger.error("error");
+		
 		return "/index";
 	}
 	
@@ -40,10 +41,10 @@ public class Controller {
 	
 	@RequestMapping("/signup")
 	public String signup(User user) {
-		//비밀번호 암호와
+		//encoding PW
 		String encodedPassword =new BCryptPasswordEncoder().encode(user.getPassword());
 		
-		//유저데이터셋팅
+		//Setting UserData
 		user.setPassword(encodedPassword);
 		user.setAccoutNonExpired(true);
 		user.setEnabled(true);
@@ -51,9 +52,9 @@ public class Controller {
 		user.setCredentialNonExpired(true);
 		user.setAuthorities(AuthorityUtils.createAuthorityList("ROLE_USER"));
 		
-		//유저생성
+		//Creating User
 		userservice.createUser(user);
-		//유저 권한 생성
+		//Creating Auth
 		userservice.createAuthorities(user);
 		
 		return "/login";
@@ -74,8 +75,12 @@ public class Controller {
 	public String denied(Model model) {
 		return "/denied";
 	}
-	
-	
+
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/chart")
+	public String chart(Model model) {
+		return "/user_chart";
+	}
 	
 	
 }

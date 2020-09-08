@@ -16,5 +16,13 @@ public class BoardServiceImpl implements BoardService{
 	public List<Board> selectBoardList() {
 		return boardmapper.selectBoardList();
 	}
+	
+	@Override
+	public int getBoardListCount() {
+		return boardmapper.getBoardListCount();
+		//TODO pagination
+		//pagination Need Another CLASS
+	}
 
+		
 }

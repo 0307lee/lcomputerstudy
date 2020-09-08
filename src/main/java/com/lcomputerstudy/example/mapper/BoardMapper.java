@@ -9,4 +9,5 @@ import com.lcomputerstudy.example.domain.Board;
 @Mapper
 public interface BoardMapper {
 	public List<Board> selectBoardList();
+	public int getBoardListCount();
 }

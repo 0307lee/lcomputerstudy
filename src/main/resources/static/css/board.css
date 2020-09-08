@@ -57,6 +57,9 @@ div > #paging {
    .glyphicon.glyphicon {
    font-size: 50px;
 }
+   .glyphicon.glyphicon-home {
+   font-size: 30px;
+}
 
 .box {
 	width: 150px;

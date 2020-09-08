@@ -6,4 +6,6 @@ import com.lcomputerstudy.example.domain.Board;
 
 public interface BoardService {
 	public List<Board> selectBoardList();
+	
+	public int getBoardListCount();
 }

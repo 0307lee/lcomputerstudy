@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="30 seconds">
  
- 	<!--console 로그 설정  -->
+<!-- SETTING for LOG in Console-->
     <appender name="STDOUT"
         class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <Pattern>
-                %d{HH:mm:ss,SSS} %highlight(%-5level) --- [%thread] %logger{35}: %msg%n</Pattern>
+            <Pattern>%d{HH:mm:ss,SSS} %highlight(%-5level) --- [%thread] %logger{35}: %msg%n</Pattern>
         </encoder>
     </appender>
- <!--  로그 파일로 남기는 설정 -->
+<!--  SETTING for Saving LOG file-->
     <appender name="FILE"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy
@@ -19,18 +18,16 @@
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder>
-        	<Pattern> %d{HH:mm:ss,SSS}%-5level --- [%thread] %logger{35}: %msg%n</Pattern>
+        	<Pattern>%d{HH:mm:ss,SSS}%-5level --- [%thread] %logger{35}: %msg%n</Pattern>
        	</encoder>
     </appender>
-    <!-- 설정한 로그 등록 -->
-    
-    
-    <!-- mapper패키지-->
+<!-- Registering LOG -->
+    <!-- mapper package-->
     <logger name="com.lcomputerstudy.example.mapper" level="TRACE" additivity="false">
     	<appender-ref ref="FILE"/>
     	<appender-ref ref="STDOUT"/>
     </logger>
-    <!-- mapper패키지-->
+    <!-- mapper package-->
     
     <logger name="com.lcomputerstudy.example" level="DEBUG" additivity="false">
     	<appender-ref ref="FILE"/>
@@ -46,6 +43,6 @@
         <appender-ref ref="FILE" />
         <appender-ref ref="STDOUT" />
     </root>
- 
- <!-- 설정한 로그 등록 -->
+<!-- Registering LOG -->
+
 </configuration>
