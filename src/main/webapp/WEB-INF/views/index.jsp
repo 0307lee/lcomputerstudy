@@ -82,9 +82,7 @@
 			</div>
 	        <div class="BOARD col-md-8">			        	
 				<div id="list">
-					<c:forEach var="list" items="${list}">
-						<b>게시판 (전체 글 갯수: &nbsp;${list.b_cnt_id}) &nbsp;&nbsp;&nbsp;</b>
-				    </c:forEach>
+						<b>게시판 (전체 글 갯수: &nbsp;${b_cnt_id}) &nbsp;&nbsp;&nbsp;</b>
 				    <a class="navbar-brand" href="/user/writing">
 				    	<button type="button" class="btn btn-default btn-sm">글쓰기</button>
 				    </a>

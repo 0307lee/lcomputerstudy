@@ -27,6 +27,9 @@ public class Controller {
 		List<BoardVO> list =boardservice.selectBoardList();
 		model.addAttribute("list", list);
 		
+		int b_cnt_id=boardservice.getBoardListCount();
+		model.addAttribute("b_cnt_id", b_cnt_id);
+		
 		logger.debug("debug");
 		logger.info("info");
 		logger.error("error");
