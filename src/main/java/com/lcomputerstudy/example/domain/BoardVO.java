@@ -1,12 +1,12 @@
 package com.lcomputerstudy.example.domain;
 
 public class BoardVO {
-	private int bId;
-	private String bTitle;
-	private String bContent;
-	private String bWriter;
-	private String bDateTime;
-	private	int b_cnt_id;
+	private int		bId;
+	private String	bTitle;
+	private String	bContent;
+	private String	bWriter;
+	private String	bDateTime;
+	private	int		b_cnt_id;
 	
 	public int getbId() {
 		return bId;
@@ -41,10 +41,10 @@ public class BoardVO {
 	public void setbDateTime(String bDateTime) {
 		this.bDateTime=bDateTime;
 	}
-	public int getB_cnt_id() {
+	public int getb_cnt_id() {
 		return b_cnt_id;
 	}
-	public void setB_cnt_id(int b_cnt_id) {
+	public void setb_cnt_id(int b_cnt_id) {
 		this.b_cnt_id = b_cnt_id;
 	}
 	
