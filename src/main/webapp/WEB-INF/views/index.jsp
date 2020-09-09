@@ -32,7 +32,7 @@
 				<h4>AS IS LIST</h4><br>&nbsp;
 					헤더, 푸터 분리 완<br>&nbsp;
 					뷰 추가 완<br>&nbsp;
-					
+					rename.User>>UserVO 완료 (재부팅이 답)<br>&nbsp;
 				<hr>
 			</div>
 	        <div class="Login col-md-3">
