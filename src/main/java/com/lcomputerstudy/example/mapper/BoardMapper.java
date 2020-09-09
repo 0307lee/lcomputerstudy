@@ -9,5 +9,8 @@ import com.lcomputerstudy.example.domain.BoardVO;
 @Mapper
 public interface BoardMapper {
 	public List<BoardVO> selectBoardList();
+	
 	public int getBoardListCount();
+	
+	public void writingpost(BoardVO post);
 }

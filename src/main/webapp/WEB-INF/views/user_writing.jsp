@@ -11,39 +11,29 @@
 	<center>
 	    <h2>게시글 쓰기</h2>
 	 
-	    <form action="user_writingprocess.jsp" method="post">
+	    <form action="/user/writingprocess" method="post">
 	        <table width="600" border="1" bordercolor="gray" bgcolor="grey">
 	            <tr heignt="40">
 	                <td align="center" width="150">작성자</td>
-	                <td width="450"><input type="text" name="writer" size="60"></td>
+	                <td width="450"><input type="text" name="bWriter" size="60"></td>
 	            </tr>
 	            <tr heignt="40">
 	                <td align="center" width="150">제목</td>
-	                <td width="450"><input type="text" name="subject"size="60"></td>
-	            </tr>
-	            <tr heignt="40">
-	                <td align="center" width="150">이메일</td>
-	                <td width="450"><input type="email" name="email"size="60"></td>
-	            </tr>
-	            <tr heignt="40">
-	                <td align="center" width="150">비밀번호</td>
-	                <td width="450"><input type="password" name="password" size="60"></td>
+	                <td width="450"><input type="text" name="bTitle"size="60"></td>
 	            </tr>
 	            <tr heignt="40">
 	                <td align="center" width="150">글 내용</td>
 	                <td width="450">
-	                <textarea rows="10" cols="50" name="content"></textarea>
+	                <textarea rows="10" cols="50" name="bContent" placeholder="   내용 입력"></textarea>
 	                </td>
 	            </tr>
 	            <tr heignt="40">
 	                <td align="center" colspan="2">
-	                <input type="submit" value="글쓰기"> &nbsp;&nbsp; 
-	                <input type="reset" value="다시 입력"> &nbsp;&nbsp;
+	                <input type="reset" value="다시 입력"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	                <input type="submit" value="글쓰기">&nbsp;&nbsp;
 	                </td>
 	            </tr>
 	        </table>
 	    </form>
 	</center>
-
-	
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

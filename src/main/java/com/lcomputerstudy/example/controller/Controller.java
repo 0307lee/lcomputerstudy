@@ -91,7 +91,16 @@ public class Controller {
 		return "/user_writing";
 	}
 
-	
-	
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/writingprocess")
+	public String writingprocess(BoardVO post) {
+		//Writing
+		boardservice.writingpost(post);
+		
+		logger.debug("debug");
+		logger.info("info");
+		logger.error("error");
+		return "/index";
+	}
 	
 }

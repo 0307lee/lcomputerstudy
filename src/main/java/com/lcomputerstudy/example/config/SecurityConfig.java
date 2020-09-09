@@ -67,17 +67,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	 	.rememberMeParameter("remeber-me")
 	 	.tokenValiditySeconds(86400)//1day
 	 	.and()
-//	 exceptionhanding
+//exceptionhanding
 	 .exceptionHandling()
 	 	.accessDeniedPage("/denied")
 	 	.and()
-//	 sesion
+//sesion
 	 .sessionManagement()	
 	 	.sessionCreationPolicy(SessionCreationPolicy.NEVER)
 	 	.invalidSessionUrl("/login")
 	 	.and()
-//	 csrf
- 	 .csrf()
+//csrf
+ 	 .csrf().disable() //for test 
+//	 .csrf()
 	 ;
 	 
 	}

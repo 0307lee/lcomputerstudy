@@ -13,4 +13,17 @@
 		SELECT	count(b_id) as b_cnt_id
 		FROM	lc_board
 	</select>
+	<insert id="writingpost" parameterType="BoardVO">
+	INSERT INTO lc_board(
+			b_title,
+			b_content,
+			b_writer,
+			b_datetime
+	) VALUES(
+		#{bWriter},
+		#{bTitle},
+		#{bContent},
+		CURRENT_TIMESTAMP()
+	)
+	</insert>
 </mapper>

@@ -12,6 +12,7 @@ import com.lcomputerstudy.example.mapper.BoardMapper;
 public class BoardServiceImpl implements BoardService{
 
 	@Autowired BoardMapper boardmapper;
+	
 	@Override
 	public List<BoardVO> selectBoardList() {
 		return boardmapper.selectBoardList();
@@ -24,5 +25,11 @@ public class BoardServiceImpl implements BoardService{
 		//pagination Need Another CLASS
 	}
 
+	@Override
+	public void writingpost(BoardVO post) {
+		boardmapper.writingpost(post);
+		//TODO pagination
+		//pagination Need Another CLASS
+	}
 		
 }
