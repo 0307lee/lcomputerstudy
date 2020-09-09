@@ -9,12 +9,12 @@ import com.lcomputerstudy.example.domain.UserVO;
 
 @Mapper
 public interface UserMapper {
-//	�����б�
+
 	public UserVO readUser(String username);
-//	��������
+
 	public void createUser(UserVO user);
-//	�����б�
+
 	public List<GrantedAuthority> readAuthorities(String username);
-//	���ѻ���
+
 	public void createAuthority(UserVO user);
 }

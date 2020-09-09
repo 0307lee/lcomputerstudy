@@ -12,12 +12,8 @@
 <jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
 	    <div class="row Well">
 	        <div class="page info col-md-9">
-	        <br>
-	        Q0 에러나는거 우야나. >git ignore 삭제
-	        Q2 연봉차트 넣기(view만)(https://www.sw.or.kr/site/sw/ex/board/View.do?cbIdx=304&bcIdx=44509&searchExt1=)
-	        Q3 google keep 바로가기
-	        Q4 블로그만들기(+ad?)https://homzzang.com/
-	        <br>
+	        	<br>
+	        	<hr>
 	        	<h4>TO DO LIST</h4>
 				1 SW_basic<br>&nbsp;
 							CRUD <br>&nbsp;
@@ -31,9 +27,13 @@
 									 <br>
 				2 HW?? SW??<br>&nbsp;
 					간단한것부터하자. 내 앞에 놓인것 일단 쳐내고. 카테고리도 분류하고<br>&nbsp;
-					<br>&nbsp;
-				====================<br>
-				<br>
+				<br>&nbsp;
+				<hr>
+				<h4>AS IS LIST</h4><br>&nbsp;
+					헤더, 푸터 분리 완<br>&nbsp;
+					뷰 추가 완<br>&nbsp;
+					
+				<hr>
 			</div>
 	        <div class="Login col-md-3">
 	        	<sec:authorize access="isAnonymous()">
@@ -82,13 +82,15 @@
 			</div>
 	        <div class="BOARD col-md-8">			        	
 				<div id="list">
-				      <b>게시판 (전체 글 갯수:) &nbsp;&nbsp;&nbsp;</b>
-				      <a class="navbar-brand" href="/user/writing">
-				      	<button type="button" class="btn btn-default btn-sm">글쓰기</button>
-				      </a>
-				       <a class="navbar-brand" href="/">
-				      	<button type="button" class="btn btn-default btn-sm">새로고침</button>
-				      </a>
+					<c:forEach var="list" items="${list}">
+						<b>게시판 (전체 글 갯수: &nbsp;${list.b_cnt_id}) &nbsp;&nbsp;&nbsp;</b>
+				    </c:forEach>
+				    <a class="navbar-brand" href="/user/writing">
+				    	<button type="button" class="btn btn-default btn-sm">글쓰기</button>
+				    </a>
+				    <a class="navbar-brand" href="/">
+				    	<button type="button" class="btn btn-default btn-sm">새로고침</button>
+				    </a>
 				</div>
 				<p></p>
 				<table class="table table-striped table-bordered table-hover">
@@ -107,14 +109,6 @@
 					  			<td>${list.bId}</td>
 					  			<td id="title">
 					  				&nbsp;&nbsp;
-									<!--
-						        	<c:if test="${article.depth > 0}">
-						           	&nbsp;&nbsp;
-									</c:if>
-									<a href="/bbs/content.bbs?articleNumber=${article.articleNumber}&pageNum=${pageNum}">${article.title}</a>
-									<c:if test="${article.hit >= 20}">
-									<span class="hit">hit!</span>
-									</c:if>-->
 								${list.bTitle}</td>
 								<td>${list.bWriter}</td>
 								<td>${list.bDateTime}</td>

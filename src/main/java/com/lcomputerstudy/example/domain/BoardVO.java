@@ -6,7 +6,8 @@ public class BoardVO {
 	private String bContent;
 	private String bWriter;
 	private String bDateTime;
-
+	private	int b_cnt_id;
+	
 	public int getbId() {
 		return bId;
 	}
@@ -39,6 +40,12 @@ public class BoardVO {
 	}
 	public void setbDateTime(String bDateTime) {
 		this.bDateTime=bDateTime;
+	}
+	public int getB_cnt_id() {
+		return b_cnt_id;
+	}
+	public void setB_cnt_id(int b_cnt_id) {
+		this.b_cnt_id = b_cnt_id;
 	}
 	
 }
