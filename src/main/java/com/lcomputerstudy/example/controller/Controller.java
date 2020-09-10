@@ -100,7 +100,8 @@ public class Controller {
 		logger.debug("debug");
 		logger.info("info");
 		logger.error("error");
-		return "/index";
+		//return "/index";
+		return "redirect:/";
 	}
 	
 }
