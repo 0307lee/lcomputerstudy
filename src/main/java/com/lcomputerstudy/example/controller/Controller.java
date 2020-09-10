@@ -10,8 +10,8 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.lcomputerstudy.example.domain.Board;
-import com.lcomputerstudy.example.domain.User;
+import com.lcomputerstudy.example.domain.BoardVO;
+import com.lcomputerstudy.example.domain.UserVO;
 import com.lcomputerstudy.example.service.BoardService;
 import com.lcomputerstudy.example.service.UserService;
 
@@ -24,12 +24,16 @@ public class Controller {
 
 	@RequestMapping("/")
 	public String home(Model model) {
-		
-		List<Board> list =boardservice.selectBoardList();
+		List<BoardVO> list =boardservice.selectBoardList();
 		model.addAttribute("list", list);
+		
+		int b_cnt_id=boardservice.getBoardListCount();
+		model.addAttribute("b_cnt_id", b_cnt_id);
+		
 		logger.debug("debug");
 		logger.info("info");
 		logger.error("error");
+		
 		return "/index";
 	}
 	
@@ -39,11 +43,11 @@ public class Controller {
 	}
 	
 	@RequestMapping("/signup")
-	public String signup(User user) {
-		//비밀번호 암호와
+	public String signup(UserVO user) {
+		//encoding PW
 		String encodedPassword =new BCryptPasswordEncoder().encode(user.getPassword());
 		
-		//유저데이터셋팅
+		//Setting UserData
 		user.setPassword(encodedPassword);
 		user.setAccoutNonExpired(true);
 		user.setEnabled(true);
@@ -51,9 +55,9 @@ public class Controller {
 		user.setCredentialNonExpired(true);
 		user.setAuthorities(AuthorityUtils.createAuthorityList("ROLE_USER"));
 		
-		//유저생성
+		//Creating User
 		userservice.createUser(user);
-		//유저 권한 생성
+		//Creating Auth
 		userservice.createAuthorities(user);
 		
 		return "/login";
@@ -74,8 +78,30 @@ public class Controller {
 	public String denied(Model model) {
 		return "/denied";
 	}
-	
-	
-	
+
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/chart")
+	public String chart(Model model) {
+		return "/user_chart";
+	}
+
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/writing")
+	public String writing(Model model) {
+		return "/user_writing";
+	}
+
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/writingprocess")
+	public String writingprocess(BoardVO post) {
+		//Writing
+		boardservice.writingpost(post);
+		
+		logger.debug("debug");
+		logger.info("info");
+		logger.error("error");
+		//return "/index";
+		return "redirect:/";
+	}
 	
 }

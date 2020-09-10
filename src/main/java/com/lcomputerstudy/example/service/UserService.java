@@ -5,20 +5,19 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.lcomputerstudy.example.domain.User;;
+import com.lcomputerstudy.example.domain.UserVO;
 
 public interface UserService extends UserDetailsService {
 
-	//유저읽기
-	public User readUser(String username);
+	public UserVO readUser(String username);
 	
-	//유저생성
-	public void createUser(User user);
+
+	public void createUser(UserVO user);
 	
-	//권한 생성
-	public void createAuthorities(User user);
+
+	public void createAuthorities(UserVO user);
 	
-	//시큐리티 권한 얻기
+
 	Collection<GrantedAuthority> getAuthorities(String username);
 
 }

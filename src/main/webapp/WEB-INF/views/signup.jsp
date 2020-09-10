@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+  
+<jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
+
 	<h1>회원가입</h1>
 	<form action="/signup"method="post">
 	<!-- csrf -->
@@ -16,5 +12,4 @@
 		<input type ="password" name="password" placeholder="password 입력">
 		<button type="submit">가입하기</button>
 	</form>
-</body>
-</html>
+<jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

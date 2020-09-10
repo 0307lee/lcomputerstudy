@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception{
 
 //All things consist of Class and Method
+	//Right and Chk.Authorize
 	 http
 	 .authorizeRequests()
 	 	.antMatchers("/user/**").authenticated()
@@ -66,17 +67,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	 	.rememberMeParameter("remeber-me")
 	 	.tokenValiditySeconds(86400)//1day
 	 	.and()
-//	 exceptionhanding
+//exceptionhanding
 	 .exceptionHandling()
 	 	.accessDeniedPage("/denied")
 	 	.and()
-//	 sesion
+//sesion
 	 .sessionManagement()	
 	 	.sessionCreationPolicy(SessionCreationPolicy.NEVER)
 	 	.invalidSessionUrl("/login")
 	 	.and()
-//	 csrf
- 	 .csrf()
+//csrf
+ 	 .csrf().disable() //for test 
+//	 .csrf()
 	 ;
 	 
 	}
