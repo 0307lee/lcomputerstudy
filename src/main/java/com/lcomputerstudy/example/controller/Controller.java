@@ -97,9 +97,7 @@ public class Controller {
 		//Writing
 		boardservice.writingpost(post);
 		
-		logger.debug("debug");
-		logger.info("info");
-		logger.error("error");
+
 		//return "/index";
 		return "redirect:/";
 	}
@@ -107,6 +105,13 @@ public class Controller {
 	@Secured({"ROLE_USER"})
 	@RequestMapping(value= "/user/post")
 	public String readingpost(Model model) {
+		List<BoardVO> list =boardservice.selectBoardList();
+		model.addAttribute("list", list);
+		
+		logger.debug("debug");
+		logger.info("info");
+		logger.error("error");
+		
 		return "/user_post";
 	}
 }

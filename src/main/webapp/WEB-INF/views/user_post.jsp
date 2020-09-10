@@ -5,13 +5,13 @@
 
 <jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
    
-    <h1>Writing PAGE</h1>
+    <h1>Reading Post PAGE</h1>
 	<hr>
 
 	<center>
-	    <h2>게시글 쓰기</h2>
+	    <h2>게시글 읽기</h2>
 	 
-	    <form action="/user/writingprocess" method="post">
+	    
 	        <table width="600" border="1" bordercolor="gray" bgcolor="grey">
 	            <tr heignt="40">
 	                <td align="center" width="150">작성자</td>
@@ -33,7 +33,18 @@
 	                <input type="submit" value="글쓰기">&nbsp;&nbsp;
 	                </td>
 	            </tr>
-	        </table>
-	    </form>
-	</center>
+	        </table>	</center>
+	
+	
+						<c:forEach var="list" items="${list}">
+							<tr>
+					  			<td>${list.bId}</td>
+					  			<td id="title">
+					  				&nbsp;&nbsp;
+								${list.bTitle}</td>
+								<td>${list.bWriter}</td>
+								<td>${list.bDateTime}</td>
+								<td>(미구현)조회수</td>
+							<tr>
+						</c:forEach>
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>
