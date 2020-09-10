@@ -3,14 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>no</title>
-</head>
-<body>
+
+<jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
+
 	<h1>YOU dont have a Right</h1>
 	<a href="/">도라가기</a>
-</body>
-</html>
+<jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

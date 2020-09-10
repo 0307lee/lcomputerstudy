@@ -5,16 +5,16 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.lcomputerstudy.example.domain.User;
+import com.lcomputerstudy.example.domain.UserVO;
 
 @Mapper
 public interface UserMapper {
-//	유저읽기
-	public User readUser(String username);
-//	유저생성
-	public void createUser(User user);
-//	권한읽기
+
+	public UserVO readUser(String username);
+
+	public void createUser(UserVO user);
+
 	public List<GrantedAuthority> readAuthorities(String username);
-//	권한생성
-	public void createAuthority(User user);
+
+	public void createAuthority(UserVO user);
 }

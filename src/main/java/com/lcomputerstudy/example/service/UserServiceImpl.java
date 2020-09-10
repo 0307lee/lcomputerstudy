@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.lcomputerstudy.example.domain.User;
+import com.lcomputerstudy.example.domain.UserVO;
 import com.lcomputerstudy.example.mapper.UserMapper;
 
 @Service
@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userMapper.readUser(username);
+		UserVO user = userMapper.readUser(username);
 		user.setAuthorities(getAuthorities(username));
 		
 		return user;
@@ -33,19 +33,19 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void createUser(User user) {
+	public void createUser(UserVO user) {
 		// TODO Auto-generated method stub
 		userMapper.createUser(user);
 	}
 
 	@Override
-	public void createAuthorities(User user) {
+	public void createAuthorities(UserVO user) {
 		// TODO Auto-generated method stub
 		userMapper.createAuthority(user);
 	}
 
 	@Override
-	public User readUser(String username) {
+	public UserVO readUser(String username) {
 		// TODO Auto-generated method stub
 		return userMapper.readUser(username);
 	}
