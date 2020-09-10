@@ -28,8 +28,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void writingpost(BoardVO post) {
 		boardmapper.writingpost(post);
-		//TODO pagination
-		//pagination Need Another CLASS
 	}
+
 		
 }

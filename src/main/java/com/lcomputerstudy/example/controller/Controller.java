@@ -104,4 +104,9 @@ public class Controller {
 		return "redirect:/";
 	}
 	
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/post")
+	public String readingpost(Model model) {
+		return "/user_post";
+	}
 }
