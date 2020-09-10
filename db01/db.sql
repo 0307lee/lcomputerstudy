@@ -94,11 +94,6 @@ REPLACE INTO `lc_board` (`b_id`, `b_title`, `b_content`, `b_writer`, `b_datetime
 	(2, 'sdf', 'csdfs', 'sfg', '2020-08-26 19:11:56', NULL),
 	(3, 'x', 'sdfsf', 'wee', '2020-09-09 19:56:26', NULL),
 	(4, '진또배기', '한뚝배기', 'asd', '2020-09-09 21:48:20', NULL),
-	(9, 'ag', 'e', '12', '2020-09-09 22:00:12', NULL),
-	(10, 'asd', 'asd', 'asfaf', '2020-09-09 22:01:19', NULL),
-	(11, 'asd', 'asd', 'asfaf', '2020-09-09 22:03:39', NULL),
-	(12, '진또배기기', '기기', 'ㅁㄴㅇ', '2020-09-10 19:02:56', NULL),
-	(13, 'aaa', 'aaa', '222', '2020-09-10 19:09:10', NULL),
 	(14, 'wagw', 'sdf', '234', '2020-09-10 19:26:28', NULL);
 /*!40000 ALTER TABLE `lc_board` ENABLE KEYS */;
 

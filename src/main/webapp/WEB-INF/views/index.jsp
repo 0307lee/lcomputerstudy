@@ -107,8 +107,10 @@
 							<tr>
 					  			<td>${list.bId}</td>
 					  			<td id="title">
-					  				&nbsp;&nbsp;
-								${list.bTitle}</td>
+									<a href="/user/post">
+										&nbsp;&nbsp;${list.bTitle}
+									</a>
+								</td>
 								<td>${list.bWriter}</td>
 								<td>${list.bDateTime}</td>
 								<td>(미구현)조회수</td>

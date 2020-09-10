@@ -4,47 +4,45 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
-   
-    <h1>Reading Post PAGE</h1>
+  
+<style>
+	div {text-align: center;}
+</style>
+ 
+	<h1>Reading Post PAGE</h1>
 	<hr>
+	<h2>게시글 읽기</h2>
+	<c:forEach var="list" items="${list}">
+    	<div>
+    		<div>
+                <div align="center">글번호</div>
+                <div>${list.bId}</div>
+            </div>
+            <div>
+                <div align="center">조회수</div>
+                <div>(미구현)조회수</div>
+            </div>
+            <div>
+                <div align="center">작성자</div>
+                <div>${list.bWriter}</div>
+            </div>
+            <div>
+                <div align="center" >제목</div>
+                <div>${list.bTitle}</div>
+            </div>
+            <div>
+                <div align="center" >글 내용</div>
+                <div>
+	                <textarea rows="10" cols="50" name="bContent" placeholder="   내용 입력">
+	                	${list.bContent}
+	                </textarea>
+                </div>
+            </div>
+            <div>
+            </div>
+		</div>
 
-	<center>
-	    <h2>게시글 읽기</h2>
-	 
-	    
-	        <table width="600" border="1" bordercolor="gray" bgcolor="grey">
-	            <tr heignt="40">
-	                <td align="center" width="150">작성자</td>
-	                <td width="450"><input type="text" name="bWriter" size="60"></td>
-	            </tr>
-	            <tr heignt="40">
-	                <td align="center" width="150">제목</td>
-	                <td width="450"><input type="text" name="bTitle"size="60"></td>
-	            </tr>
-	            <tr heignt="40">
-	                <td align="center" width="150">글 내용</td>
-	                <td width="450">
-	                <textarea rows="10" cols="50" name="bContent" placeholder="   내용 입력"></textarea>
-	                </td>
-	            </tr>
-	            <tr heignt="40">
-	                <td align="center" colspan="2">
-	                <input type="reset" value="다시 입력"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-	                <input type="submit" value="글쓰기">&nbsp;&nbsp;
-	                </td>
-	            </tr>
-	        </table>	</center>
+	    </c:forEach>
 	
-	
-						<c:forEach var="list" items="${list}">
-							<tr>
-					  			<td>${list.bId}</td>
-					  			<td id="title">
-					  				&nbsp;&nbsp;
-								${list.bTitle}</td>
-								<td>${list.bWriter}</td>
-								<td>${list.bDateTime}</td>
-								<td>(미구현)조회수</td>
-							<tr>
-						</c:forEach>
+							
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>
