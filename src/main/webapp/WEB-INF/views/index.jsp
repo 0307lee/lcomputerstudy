@@ -103,16 +103,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="list" items="${list}">
+						<c:forEach var="user" items="${list}">
 							<tr>
-					  			<td>${list.bId}</td>
+					  			<td>${user.bId}</td>
 					  			<td id="title">
-									<a href="/user/post">
-										&nbsp;&nbsp;${list.bTitle}
-									</a>
+									<a href="/user/post/${user.bId}">&nbsp;&nbsp;${user.bTitle}</a>
 								</td>
-								<td>${list.bWriter}</td>
-								<td>${list.bDateTime}</td>
+								<td>${user.bWriter}</td>
+								<td>${user.bDateTime}</td>
 								<td>(미구현)조회수</td>
 							<tr>
 						</c:forEach>

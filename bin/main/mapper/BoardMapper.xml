@@ -8,6 +8,7 @@
 				b_writer as bWriter,
 				b_datetime as bDateTime
 		FROM	lc_board
+		WHERE	b_id	IS NOT NULL;
 	</select>
 	<select id="getBoardListCount" resultType="int">
 		SELECT	count(b_id) as b_cnt_id
@@ -26,4 +27,13 @@
 		CURRENT_TIMESTAMP()
 	)
 	</insert>
+	<select id="selectPost" resultType="BoardVO" parameterType="int">
+		SELECT	b_id as bId,
+				b_title as bTitle,
+				b_content as bContent,
+				b_writer as bWriter,
+				b_datetime as bDateTime
+		FROM	lc_board
+		WHERE	b_id	= #{bId};
+	</select>
 </mapper>

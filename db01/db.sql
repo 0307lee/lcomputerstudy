@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `lc_board` (
   CONSTRAINT `user_id` FOREIGN KEY (`u_id`) REFERENCES `lc_user` (`u_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- 테이블 데이터 db01.lc_board:~10 rows (대략적) 내보내기
+-- 테이블 데이터 db01.lc_board:~5 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `lc_board` DISABLE KEYS */;
 REPLACE INTO `lc_board` (`b_id`, `b_title`, `b_content`, `b_writer`, `b_datetime`, `u_id`) VALUES
 	(1, 'wdefs', 'content', 'lee', '2020-08-26 19:11:37', NULL),
@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `spring_session` (
   KEY `SPRING_SESSION_IX3` (`PRINCIPAL_NAME`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- 테이블 데이터 db01.spring_session:~1 rows (대략적) 내보내기
+-- 테이블 데이터 db01.spring_session:~0 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `spring_session` DISABLE KEYS */;
 REPLACE INTO `spring_session` (`PRIMARY_ID`, `SESSION_ID`, `CREATION_TIME`, `LAST_ACCESS_TIME`, `MAX_INACTIVE_INTERVAL`, `EXPIRY_TIME`, `PRINCIPAL_NAME`) VALUES
 	('0741929a-3615-47b7-89b9-52e298e97a47', '5c01dfb5-6a72-4c97-ae2f-f21b04d8e513', 1599733845210, 1599738389285, 7200, 1599745589285, NULL);

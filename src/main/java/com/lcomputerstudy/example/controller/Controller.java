@@ -9,7 +9,11 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.lcomputerstudy.example.domain.BoardVO;
 import com.lcomputerstudy.example.domain.UserVO;
 import com.lcomputerstudy.example.service.BoardService;
@@ -103,9 +107,10 @@ public class Controller {
 	}
 	
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post")
-	public String readingpost(Model model) {
-		List<BoardVO> list =boardservice.selectBoardList();
+	@RequestMapping(value= "/user/post/{bId}", method = RequestMethod.GET)
+	public String readingpost(Model model, @PathVariable("bId") int bId) {
+//		int bId=0;
+		List<BoardVO> list =boardservice.selectPost(bId);
 		model.addAttribute("list", list);
 		
 		logger.debug("debug");

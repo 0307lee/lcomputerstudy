@@ -30,5 +30,9 @@ public class BoardServiceImpl implements BoardService{
 		boardmapper.writingpost(post);
 	}
 
-		
+	@Override
+	public List<BoardVO> selectPost(int bId) {
+		return boardmapper.selectPost(bId);
+	}
+	
 }

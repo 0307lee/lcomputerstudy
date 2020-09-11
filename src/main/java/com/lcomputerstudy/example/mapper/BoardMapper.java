@@ -13,4 +13,6 @@ public interface BoardMapper {
 	public int getBoardListCount();
 	
 	public void writingpost(BoardVO post);
+
+	public List<BoardVO> selectPost(int bId);
 }

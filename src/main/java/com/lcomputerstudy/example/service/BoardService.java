@@ -11,4 +11,8 @@ public interface BoardService {
 	public int getBoardListCount();
 	
 	public void writingpost(BoardVO post);
+
+	public List<BoardVO> selectPost(int bId);
+	
+
 }
