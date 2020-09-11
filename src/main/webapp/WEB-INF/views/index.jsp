@@ -18,7 +18,7 @@
 	        	<h4>TO DO LIST</h4>
 				1 SW_basic<br>&nbsp;
 							CRUD <br>&nbsp;
-							기획 <br>&nbsp;
+							기획 (쇼핑몰 여행사 결제 랭킹 정산 ) <br>&nbsp;
 							설계 <br>&nbsp;
 							개발 <br>&nbsp;
 							 <br>
