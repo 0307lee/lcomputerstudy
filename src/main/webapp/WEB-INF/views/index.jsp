@@ -59,12 +59,14 @@
 					<button type="button" class="btn btn-default">(미구현)크롤링</button>
 					<div class="btn-group" role="group">
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							(미구현)코딩
+							(참고)코딩
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="/user/chart">연봉체계</a></li>
 							<li><a href="#">순수코딩</a></li>
+							<li><a href="#">BE Origin</a></li>
+							<li><a href="#">BE Designer</a></li>
 						</ul>
 					</div>
 					<button type="button" class="btn btn-default">(미구현)내가 애용하는</button> 유튭 화성 spaceX 차고

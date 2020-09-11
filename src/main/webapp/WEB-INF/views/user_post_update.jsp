@@ -4,43 +4,37 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
-  
-<style>
-	table {text-align: center;}
-</style>
- 
-	<h1>Reading Post PAGE</h1>
-	<hr>
-	<h2>게시글 읽기</h2>
-	<c:forEach var="list" items="${list}">
-    	<table width="600" border="1" bordercolor="gray" bgcolor="grey">
-	        <tr heignt="40">
-                <td align="center">글번호</td>
-                <td>${list.bId}</td>
-            </tr>
-            <tr>
-                <td align="center">조회수</td>
-                <td>(미구현)조회수</td>
-            </tr>
-            <tr>
-                <td align="center">작성자</td>
-                <td>${list.bWriter}</td>
-            </tr>
-            <tr>
-                <td align="center" >제목</td>
-                <td>${list.bTitle}</td>
-            </tr>
-            <tr>
-                <td align="center" >글 내용</td>
-                <td>
-	                <textarea rows="10" cols="50" name="bContent" placeholder="   내용 입력">
-	                	${list.bContent}
-	                </textarea>
-                </td>
-            </tr>
-		</table>
 
-	    </c:forEach>
-	
-							
+<style>
+	div {text-align: center;}
+</style>
+   
+    <h1>Writing PAGE</h1>
+	<hr>
+
+	    <h2>게시글 쓰기</h2>
+	     <form action="/user/post/update" method="post">
+	        <table width="600" border="1" bordercolor="gray" bgcolor="grey">
+	            <tr heignt="40">
+	                <td align="center" width="150">작성자</td>
+	                <td width="450"><input type="text" name="bWriter" size="60"></td>
+	            </tr>
+	            <tr heignt="40">
+	                <td align="center" width="150">제목</td>
+	                <td width="450"><input type="text" name="bTitle"size="60"></td>
+	            </tr>
+	            <tr heignt="40">
+	                <td align="center" width="150">글 내용</td>
+	                <td width="450">
+	                <textarea rows="10" cols="50" name="bContent" placeholder="   내용 입력"></textarea>
+	                </td>
+	            </tr>
+	            <tr heignt="40">
+	                <td align="center" colspan="2">
+	                <input type="reset" value="다시 입력"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	                <input type="submit" value="글쓰기">&nbsp;&nbsp;
+	                </td>
+	            </tr>
+	        </table>
+	    </form>
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

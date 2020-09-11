@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.lcomputerstudy.example.domain.BoardVO;
 import com.lcomputerstudy.example.domain.UserVO;
@@ -100,10 +99,8 @@ public class Controller {
 	public String writingprocess(BoardVO post) {
 		//Writing
 		boardservice.writingpost(post);
-		
-
-		//return "/index";
 		return "redirect:/";
+		//return "/index";
 	}
 	
 	@Secured({"ROLE_USER"})
@@ -112,11 +109,24 @@ public class Controller {
 //		int bId=0;
 		List<BoardVO> list =boardservice.selectPost(bId);
 		model.addAttribute("list", list);
-		
-		logger.debug("debug");
-		logger.info("info");
-		logger.error("error");
-		
 		return "/user_post";
 	}
+	
+//	@Secured({"ROLE_USER"})
+//	@RequestMapping(value= "/user/post/update/{bId}")
+//	public String writing(Model model, @PathVariable("bId") int bId) {
+//		List<BoardVO> list =boardservice.updatePost(bId);
+//logger.debug("debug");
+//logger.info("info");
+//logger.error("error");
+//		return "/user_post_updating";
+//	수정 권한
+//	1 u_id 가 같다
+//	2 u_level 이 3이상
+
+//	}
 }
+
+
+
+

@@ -14,5 +14,4 @@ public interface BoardService {
 
 	public List<BoardVO> selectPost(int bId);
 	
-
 }
