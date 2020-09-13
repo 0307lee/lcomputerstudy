@@ -15,4 +15,8 @@ public interface BoardMapper {
 	public void writingpost(BoardVO post);
 
 	public List<BoardVO> selectPost(int bId);
+
+	public List<BoardVO> updatePost(int bId);
+
+	public void udatepostprocess(BoardVO post, int bId);
 }

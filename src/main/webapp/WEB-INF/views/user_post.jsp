@@ -39,9 +39,15 @@
                 </td>
             </tr>
 		</table>
+		<div class="col-md-4" id="update">
+			<a href="/user/post/update/${user.bId}">(권한 제한 필요)수정하기</a>
+		</div>
+		<div class="col-md-4" id="home">
+			<a href="/">게시판으로</a>
+		</div>
+		<div class="col-md-4" id="delete">
+			<a href="/user/post/Delete/${user.bId}">(권한 제한 필요)삭제하기</a>
+		</div>
 	</c:forEach>
-	<form action="/user/writingprocess" method="post">
-	</form>
-	
-							
+			
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

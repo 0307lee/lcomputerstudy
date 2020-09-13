@@ -34,5 +34,15 @@ public class BoardServiceImpl implements BoardService{
 	public List<BoardVO> selectPost(int bId) {
 		return boardmapper.selectPost(bId);
 	}
+
+	@Override
+	public List<BoardVO> updatePost(int bId) {
+		return boardmapper.updatePost(bId);
+	}
 	
+	@Override
+	public List<BoardVO> updatePostProcess(BoardVO post,int bId) {
+		boardmapper.udatepostprocess(post, bId);
+		return boardmapper.updatePost(bId);
+	}
 }

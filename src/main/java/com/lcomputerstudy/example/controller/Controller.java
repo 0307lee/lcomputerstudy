@@ -112,19 +112,25 @@ public class Controller {
 		return "/user_post";
 	}
 	
-//	@Secured({"ROLE_USER"})
-//	@RequestMapping(value= "/user/post/update/{bId}")
-//	public String writing(Model model, @PathVariable("bId") int bId) {
-//		List<BoardVO> list =boardservice.updatePost(bId);
-//logger.debug("debug");
-//logger.info("info");
-//logger.error("error");
-//		return "/user_post_updating";
-//	수정 권한
-//	1 u_id 가 같다
-//	2 u_level 이 3이상
-
-//	}
+	//Access Only Same U_id
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/post/update/{bId}")
+	public String updatePost(Model model, @PathVariable("bId") int bId) {
+		List<BoardVO> list =boardservice.updatePost(bId);
+		model.addAttribute("list", list);
+		logger.debug("debug");
+		logger.info("info");
+		logger.error("error");
+		return "/user_post_update";
+	}
+	
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/post/update/process/{bId}")
+	public String updatePostProcess(Model model, @PathVariable("bId") int bId) {
+		List<BoardVO> list =boardservice.updatePost(bId);
+		model.addAttribute("list", list);
+		return "/user_post_update";
+	}
 }
 
 
