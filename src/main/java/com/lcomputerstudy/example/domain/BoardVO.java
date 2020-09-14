@@ -1,5 +1,9 @@
 package com.lcomputerstudy.example.domain;
 
+import java.util.Collection;
+
+import org.springframework.security.core.GrantedAuthority;
+
 public class BoardVO {
 	private int		bId;
 	private String	bTitle;
@@ -7,6 +11,7 @@ public class BoardVO {
 	private String	bWriter;
 	private String	bDateTime;
 	private	int		b_cnt_id;
+	private String 	uId;
 	
 	public int getbId() {
 		return bId;
@@ -47,5 +52,14 @@ public class BoardVO {
 	public void setb_cnt_id(int b_cnt_id) {
 		this.b_cnt_id = b_cnt_id;
 	}
-	
+	//u_name은 포린키로 연결될것인데 여기에 이렇게 그냥 다른 Board값처럼 선언하면 되나?
+	//UserVO의 authorities경우에는
+	//public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+	//이렇게 끌어왓던데
+	public String getuId() {
+		return uId;
+	}
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
 }

@@ -13,10 +13,20 @@
 	<hr>
 
 	    <h2>게시글 쓰기</h2>
-	     <form action="/user/writingprocess" method="post">
+	     <form action="/user/post_write_process" method="post">
 	        <table width="600" border="1" bordercolor="gray" bgcolor="grey">
+	        	<tr heignt="40">
+	        	<sec:authentication var="secUser" property="principal" />
+		        	<sec:authorize access="hasAnyRole('MASTER', 'DEVELOPER')">
+							<td>
+								<input type="text"  name="uId" value="${secUser.username}">
+							</td>
+							<td >[수정엄금]"<<"저거 안보이게(hidden) 할수도 있지만 일단 둔다. 접속ID</td>
+		        	</sec:authorize>
+		        </tr>		
+				
 	            <tr heignt="40">
-	                <td align="center" width="150">작성자</td>
+	            	<td align="center" width="150">작성자</td>
 	                <td width="450"><input type="text" name="bWriter" size="60"></td>
 	            </tr>
 	            <tr heignt="40">
@@ -36,5 +46,6 @@
 	                </td>
 	            </tr>
 	        </table>
+	        
 	    </form>
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

@@ -33,10 +33,6 @@ public class Controller {
 		int b_cnt_id=boardservice.getBoardListCount();
 		model.addAttribute("b_cnt_id", b_cnt_id);
 		
-		logger.debug("debug");
-		logger.info("info");
-		logger.error("error");
-		
 		return "/index";
 	}
 	
@@ -89,18 +85,17 @@ public class Controller {
 	}
 
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/writing")
-	public String writing(Model model) {
-		return "/user_writing";
+	@RequestMapping(value= "/user/post_write")
+	public String CallwritePostJSP(Model model) {
+		return "/user_post_write";
 	}
 
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/writingprocess")
-	public String writingprocess(BoardVO post) {
+	@RequestMapping(value= "/user/post_write_process")
+	public String writePostProcess(BoardVO post) {
 		//Writing
-		boardservice.writingpost(post);
+		boardservice.writePostProcess(post);
 		return "redirect:/";
-		//return "/index";
 	}
 	
 	@Secured({"ROLE_USER"})
@@ -109,30 +104,29 @@ public class Controller {
 //		int bId=0;
 		List<BoardVO> list =boardservice.selectPost(bId);
 		model.addAttribute("list", list);
-		return "/user_post";
-	}
-	
-	//Access Only Same U_id
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/update/{bId}")
-	public String updatePost(Model model, @PathVariable("bId") int bId) {
-		List<BoardVO> list =boardservice.updatePost(bId);
-		model.addAttribute("list", list);
+
 		logger.debug("debug");
 		logger.info("info");
 		logger.error("error");
+		
+		return "/user_post";
+	}
+
+	//Access Only Same U_id
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/post/update/{bId}")
+	public String updatePost(Model model) {
+		
 		return "/user_post_update";
 	}
 	
 	@Secured({"ROLE_USER"})
 	@RequestMapping(value= "/user/post/update/process/{bId}")
-	public String updatePostProcess(Model model, @PathVariable("bId") int bId) {
-		List<BoardVO> list =boardservice.updatePost(bId);
-		model.addAttribute("list", list);
-		return "/user_post_update";
+	public String updatePostProcess(BoardVO post) {
+		//Writing
+		boardservice.writePostProcess(post);
+		return "redirect:/";
 	}
+	//BoardVO post, @PathVariable("bId") int bId
+
 }
-
-
-
-

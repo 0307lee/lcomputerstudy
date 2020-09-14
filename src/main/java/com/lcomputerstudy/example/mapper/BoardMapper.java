@@ -12,11 +12,10 @@ public interface BoardMapper {
 	
 	public int getBoardListCount();
 	
-	public void writingpost(BoardVO post);
+	public void writePostProcess(BoardVO post);
 
 	public List<BoardVO> selectPost(int bId);
 
 	public List<BoardVO> updatePost(int bId);
 
-	public void udatepostprocess(BoardVO post, int bId);
 }

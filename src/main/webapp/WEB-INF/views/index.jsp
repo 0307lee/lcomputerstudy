@@ -86,7 +86,7 @@
 	        <div class="BOARD col-md-8">			        	
 				<div id="list">
 						<b>게시판 (전체 글 갯수: &nbsp;${b_cnt_id}) &nbsp;&nbsp;&nbsp;</b>
-				    <a class="navbar-brand" href="/user/writing">
+				    <a class="navbar-brand" href="/user/post_write">
 				    	<button type="button" class="btn btn-default btn-sm">글쓰기</button>
 				    </a>
 				    <a class="navbar-brand" href="/">

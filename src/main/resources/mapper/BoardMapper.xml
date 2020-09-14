@@ -14,25 +14,37 @@
 		SELECT	count(b_id) as b_cnt_id
 		FROM	lc_board
 	</select>
-	<insert id="writingpost" parameterType="BoardVO">
+	<insert id="writePostProcess" parameterType="BoardVO">
 	INSERT INTO lc_board(
+			b_id,
 			b_title,
 			b_content,
 			b_writer,
-			b_datetime
+			b_datetime,
+			u_id
 	) VALUES(
-		#{bWriter},
-		#{bTitle},
-		#{bContent},
-		CURRENT_TIMESTAMP()
+			#{bId},
+			#{bTitle},
+			#{bContent},
+			#{bWriter},
+			CURRENT_TIMESTAMP(),
+			#{uId}
 	)
+	ON DUPLICATE KEY UPDATE
+   			b_title=	#{bTitle},
+   			b_content=	#{bContent},
+			b_writer=	#{bWriter},
+			b_datetime=	CURRENT_TIMESTAMP(),
+			u_id=		#{uId}
+   			;
 	</insert>
 	<select id="selectPost" resultType="BoardVO" parameterType="int">
-		SELECT	b_id as bId,
-				b_title as bTitle,
-				b_content as bContent,
-				b_writer as bWriter,
-				b_datetime as bDateTime
+		SELECT	b_id		as bId,
+				b_title		as bTitle,
+				b_content	as bContent,
+				b_writer	as bWriter,
+				b_datetime	as bDateTime,
+				u_id		as uId
 		FROM	lc_board
 		WHERE	b_id	= #{bId};
 	</select>

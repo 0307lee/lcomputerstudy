@@ -39,9 +39,16 @@
                 </td>
             </tr>
 		</table>
-		<div class="col-md-4" id="update">
-			<a href="/user/post/update/${user.bId}">(권한 제한 필요)수정하기</a>
-		</div>
+		<sec:authentication var="secUser" property="principal" />
+			"${secUser.username}" 가 여기를 들어왔고
+			"${user.uId}" 가 이 글을 썻고
+			<br>
+       	<c:if test="${secUser.username eq user.uId}">
+       		<div class="col-md-4" id="update">
+				<a href="/user/post/update/${user.bId}">(권한 제한 필요)수정하기</a>
+			</div>
+       	</c:if>
+		
 		<div class="col-md-4" id="home">
 			<a href="/">게시판으로</a>
 		</div>

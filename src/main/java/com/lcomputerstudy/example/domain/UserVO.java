@@ -18,8 +18,6 @@ public class UserVO implements UserDetails {
 		  `u_isEnabled` tinyint(4) DEFAULT NULL,
 	 */
 	private String username;
-	
-
 	private String password;
 	private String uName;
 	private String uDateTime;

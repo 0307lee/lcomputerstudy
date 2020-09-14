@@ -26,8 +26,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public void writingpost(BoardVO post) {
-		boardmapper.writingpost(post);
+	public void writePostProcess(BoardVO post) {
+		boardmapper.writePostProcess(post);
 	}
 
 	@Override
@@ -35,14 +35,9 @@ public class BoardServiceImpl implements BoardService{
 		return boardmapper.selectPost(bId);
 	}
 
-	@Override
-	public List<BoardVO> updatePost(int bId) {
-		return boardmapper.updatePost(bId);
-	}
-	
-	@Override
-	public List<BoardVO> updatePostProcess(BoardVO post,int bId) {
-		boardmapper.udatepostprocess(post, bId);
-		return boardmapper.updatePost(bId);
-	}
+//	@Override
+//	public List<BoardVO> updatePost(BoardVO post,int bId) {
+//		return boardmapper.updatePost(bId);
+//	}
+
 }
