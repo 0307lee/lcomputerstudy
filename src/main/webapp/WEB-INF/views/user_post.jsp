@@ -36,6 +36,9 @@
 					${board.bContent}
                 </td>
             </tr>
+            <tr>
+            	<td>${board.bDisabled}</td>
+            </tr>
 		</table><hr>
 		<div class="col-md-4" id="home">
 			<a href="/">게시판으로</a>
@@ -51,11 +54,7 @@
 			
 			
 			<form action="/user/post_delete" method="post" id="frm-delete">
-				<input type="hidden" name="bId"		value="${board.bId}">
-				<input type="hidden" name="bId"		value="${board.bTitle}">
-				<input type="hidden" name="bId"		value="${board.bContent}">
-				<input type="hidden" name="bWriter"	value="${board.bWriter}">
-				<input type="hidden" name="uId"		value="${board.uId}">
+				<input type="hidden" name="bId"	value="${board.bId}">
 				<div class="col-md-4" id="delete">
 					<button id="btn-delete">삭제</button>
 				</div>
@@ -75,6 +74,7 @@
 
 <script>
 	$(document).on('click', '#btn-delete', function () {
+		alert("delete");
 		$('#frm-delete').submit();
 	});
 	//docu내의 btn을 클릭하면

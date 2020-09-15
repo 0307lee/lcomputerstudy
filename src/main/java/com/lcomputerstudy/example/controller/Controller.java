@@ -122,7 +122,7 @@ public class Controller {
 	}
 		
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/delete/process")
+	@RequestMapping(value= "/user/post_delete")
 	public String deletePostProcess(BoardVO post) {
 		boardservice.deletePostProcess(post);
 		return "redirect:/";

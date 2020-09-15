@@ -12,7 +12,8 @@ public class BoardVO {
 	private String	bDateTime;
 	private	int		b_cnt_id;
 	private String 	uId;
-	
+	private int		bDisabled;
+
 	public int getbId() {
 		return bId;
 	}
@@ -52,14 +53,21 @@ public class BoardVO {
 	public void setb_cnt_id(int b_cnt_id) {
 		this.b_cnt_id = b_cnt_id;
 	}
-	//u_name은 포린키로 연결될것인데 여기에 이렇게 그냥 다른 Board값처럼 선언하면 되나?
+	//u_name은 포린키로 연결될것인데 여기에 이렇게 그냥 다른 Board값처럼 선언하면 되나? yes
 	//UserVO의 authorities경우에는
 	//public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
-	//이렇게 끌어왓던데
+	//이렇게 끌어왓던데 collection이라는 list 비슷한 것에다가 넣는거
 	public String getuId() {
 		return uId;
 	}
 	public void setuId(String uId) {
 		this.uId = uId;
+	}
+	
+	public int getbDisabled() {
+		return bDisabled;
+	}
+	public void setbDisabled(int bDisabled) {
+		this.bDisabled = bDisabled;
 	}
 }
