@@ -18,4 +18,6 @@ public interface BoardMapper {
 
 	public List<BoardVO> updatePost(int bId);
 
+	public void deletePostProcess(BoardVO post);
+
 }

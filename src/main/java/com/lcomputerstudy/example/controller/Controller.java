@@ -28,7 +28,7 @@ public class Controller {
 	@RequestMapping("/")
 	public String home(Model model) {
 		List<BoardVO> list =boardservice.selectBoardList();
-		model.addAttribute("list", list);
+		model.addAttribute("list_BoardVO", list);
 		
 		int b_cnt_id=boardservice.getBoardListCount();
 		model.addAttribute("b_cnt_id", b_cnt_id);
@@ -79,14 +79,14 @@ public class Controller {
 	}
 
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/chart")
+	@RequestMapping(value= "/chart")
 	public String chart(Model model) {
-		return "/user_chart";
+		return "/chart";
 	}
 
 	@Secured({"ROLE_USER"})
 	@RequestMapping(value= "/user/post_write")
-	public String CallwritePostJSP(Model model) {
+	public String Call_writePost_JSP(Model model) {
 		return "/user_post_write";
 	}
 
@@ -103,7 +103,7 @@ public class Controller {
 	public String readingpost(Model model, @PathVariable("bId") int bId) {
 //		int bId=0;
 		List<BoardVO> list =boardservice.selectPost(bId);
-		model.addAttribute("list", list);
+		model.addAttribute("list_BoardVO", list);
 
 		logger.debug("debug");
 		logger.info("info");
@@ -115,18 +115,26 @@ public class Controller {
 	//Access Only Same U_id
 	@Secured({"ROLE_USER"})
 	@RequestMapping(value= "/user/post/update/{bId}")
-	public String updatePost(Model model) {
-		
+	public String Call_updatePost_JSP(Model model, @PathVariable("bId") int bId) {
+		List<BoardVO> list =boardservice.selectPost(bId);
+		model.addAttribute("list_BoardVO", list);
 		return "/user_post_update";
 	}
 	
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/update/process/{bId}")
+	@RequestMapping(value= "/user/post/update/process")
 	public String updatePostProcess(BoardVO post) {
-		//Writing
+		//Writing(if Has
 		boardservice.writePostProcess(post);
+		return "redirect:/user/post/"+post.getbId();
+	}
+	
+	@Secured({"ROLE_USER"})
+	@RequestMapping(value= "/user/post/delete/process/{bId}")
+	public String deletePostProcess(BoardVO post) {
+		//Writing(if Has
+		boardservice.writePostProcess(post);
+		boardservice.deletePostProcess(post);
 		return "redirect:/";
 	}
-	//BoardVO post, @PathVariable("bId") int bId
-
 }

@@ -35,9 +35,9 @@ public class BoardServiceImpl implements BoardService{
 		return boardmapper.selectPost(bId);
 	}
 
-//	@Override
-//	public List<BoardVO> updatePost(BoardVO post,int bId) {
-//		return boardmapper.updatePost(bId);
-//	}
+	@Override
+	public void deletePostProcess(BoardVO post) {
+		boardmapper.deletePostProcess(post);
+	}
 
 }

@@ -16,13 +16,12 @@
 	     <form action="/user/post_write_process" method="post">
 	        <table width="600" border="1" bordercolor="gray" bgcolor="grey">
 	        	<tr heignt="40">
+
 	        	<sec:authentication var="secUser" property="principal" />
-		        	<sec:authorize access="hasAnyRole('MASTER', 'DEVELOPER')">
-							<td>
-								<input type="text"  name="uId" value="${secUser.username}">
-							</td>
-							<td >[수정엄금]"<<"저거 안보이게(hidden) 할수도 있지만 일단 둔다. 접속ID</td>
-		        	</sec:authorize>
+					<td>
+						<input type="text"  name="uId" value="${secUser.username}">
+					</td>
+					<td >[수정엄금1]"<<"저거 안보이게(hidden) 할수도 있지만 일단 둔다. 접속ID</td>
 		        </tr>		
 				
 	            <tr heignt="40">

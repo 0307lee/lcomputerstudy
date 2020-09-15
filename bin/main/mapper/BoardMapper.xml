@@ -31,6 +31,7 @@
 			#{uId}
 	)
 	ON DUPLICATE KEY UPDATE
+			b_id=		#{bId},
    			b_title=	#{bTitle},
    			b_content=	#{bContent},
 			b_writer=	#{bWriter},
@@ -48,26 +49,13 @@
 		FROM	lc_board
 		WHERE	b_id	= #{bId};
 	</select>
-	<select id="updatePost" resultType="BoardVO" parameterType="int">
-		SELECT	b_id as bId,
-				b_title as bTitle,
-				b_content as bContent,
-				b_writer as bWriter,
-				b_datetime as bDateTime
-		FROM	lc_board
-		WHERE	b_id	= #{bId};
-	</select>
-	<insert id="updatepostprocess" parameterType="BoardVO">
-	INSERT INTO lc_board(
-			b_title,
-			b_content,
-			b_writer,
-			b_datetime
-	) VALUES(
-		#{bWriter},
-		#{bTitle},
-		#{bContent},
-		CURRENT_TIMESTAMP()
-	)
+
+	<insert id="deletePostProcess" parameterType="BoardVO">
+		INSERT INTO lc_board_delete_temp 
+		SELECT * FROM lc_board 
+		WHERE b_id = #{bId};
+		
+		DELETE FROM lc_board 
+		WHERE b_id = #{bId};
 	</insert>
 </mapper>

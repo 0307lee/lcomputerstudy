@@ -5,7 +5,7 @@
 
 <!-- 
 	//Err often came from (1)lib(@build.gradle) (2)ref.(@index.jsp)
-	//soln1. (clean&build) (disconnect&connect) again again...
+	//soln1. (clean&build) (disconnect&connect) (gradle>refrash) again again...
 	//	cf. maven's way << put <dependancy> but, I use gradle
 	//	different Auto build system (maven, gradle)
 	//soln2. No korean? (bcz of, UTF etc..)	
@@ -14,6 +14,10 @@
 	    <div class="row Well">
 	        <div class="page info col-md-9">
 	        	<br>
+	        	<!-- NOT WORKING -->
+		       	<sec:authorize access="hasAnyRole('MASTER', 'DEVELOPER')">
+					<h2>MASTER LOGIN</h2>
+		       	</sec:authorize>
 	        	<hr>
 	        	<h4>TO DO LIST</h4>
 				1 SW_basic<br>&nbsp;
@@ -63,7 +67,7 @@
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="/user/chart">연봉체계</a></li>
+							<li><a href="/chart">연봉체계</a></li>
 							<li><a href="#">순수코딩</a></li>
 							<li><a href="#">BE Origin</a></li>
 							<li><a href="#">BE Designer</a></li>
@@ -105,14 +109,14 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="user" items="${list}">
+						<c:forEach var="board" items="${list_BoardVO}">
 							<tr>
-					  			<td>${user.bId}</td>
+					  			<td>${board.bId}</td>
 					  			<td id="title">
-									<a href="/user/post/${user.bId}">&nbsp;&nbsp;${user.bTitle}</a>
+									<a href="/user/post/${board.bId}">&nbsp;&nbsp;${board.bTitle}</a>
 								</td>
-								<td>${user.bWriter}</td>
-								<td>${user.bDateTime}</td>
+								<td>${board.bWriter}</td>
+								<td>${board.bDateTime}</td>
 								<td>(미구현)조회수</td>
 							<tr>
 						</c:forEach>

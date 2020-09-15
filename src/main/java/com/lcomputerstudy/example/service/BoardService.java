@@ -14,6 +14,7 @@ public interface BoardService {
 
 	public List<BoardVO> selectPost(int bId);
 
-//	public List<BoardVO> updatePost(BoardVO post,int bId);
+	public void deletePostProcess(BoardVO post);
+
 	
 }
