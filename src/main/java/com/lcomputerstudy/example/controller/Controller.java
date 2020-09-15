@@ -105,10 +105,6 @@ public class Controller {
 		List<BoardVO> list =boardservice.selectPost(bId);
 		model.addAttribute("list_BoardVO", list);
 
-		logger.debug("debug");
-		logger.info("info");
-		logger.error("error");
-		
 		return "/user_post";
 	}
 
@@ -125,6 +121,11 @@ public class Controller {
 	@RequestMapping(value= "/user/post_delete")
 	public String deletePostProcess(BoardVO post) {
 		boardservice.deletePostProcess(post);
+
+		logger.debug("debug");
+		logger.info("info");
+		logger.error("error");
+		
 		return "redirect:/";
 	}
 }
