@@ -73,10 +73,12 @@
 
 
 <script>
-	$(document).on('click', '#btn_delete', function () {
+	$(document).on
+	('click', '#btn_delete', function () {
 		alert("delete");
 		$('#frm_delete').submit();
-	});
+		}
+	);
 	//docu내의 btn을 클릭하면
 	//	form(=frm-write)가 실행된다
 </script>
