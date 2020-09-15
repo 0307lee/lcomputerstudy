@@ -53,10 +53,10 @@
 			</div>
 			
 			
-			<form action="/user/post_delete" method="post" id="frm-delete">
+			<form action="/user/post_delete" method="post" id="frm_delete">
 				<input type="hidden" name="bId"	value="${board.bId}">
 				<div class="col-md-4" id="delete">
-					<button id="btn-delete">삭제</button>
+					<button id="btn_delete">삭제</button>
 				</div>
 			</form>
       	</sec:authorize>
@@ -73,9 +73,9 @@
 
 
 <script>
-	$(document).on('click', '#btn-delete', function () {
+	$(document).on('click', '#btn_delete', function () {
 		alert("delete");
-		$('#frm-delete').submit();
+		$('#frm_delete').submit();
 	});
 	//docu내의 btn을 클릭하면
 	//	form(=frm-write)가 실행된다
