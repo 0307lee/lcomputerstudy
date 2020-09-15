@@ -51,11 +51,8 @@
 	</select>
 
 	<insert id="deletePostProcess" parameterType="BoardVO">
-		INSERT INTO lc_board_delete_temp 
-		SELECT * FROM lc_board 
-		WHERE b_id = #{bId};
-		
-		DELETE FROM lc_board 
-		WHERE b_id = #{bId};
+		UPDATE lc_user
+		SET u_disabled = 1
+		WHERE u_id = #{uId};
 	</insert>
 </mapper>

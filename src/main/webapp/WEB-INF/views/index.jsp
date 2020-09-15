@@ -11,11 +11,12 @@
 	//soln2. No korean? (bcz of, UTF etc..)	
  -->
 <jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
+<sec:authentication property="principal" var="principal"/>
 	    <div class="row Well">
 	        <div class="page info col-md-9">
 	        	<br>
-	        	<!-- NOT WORKING -->
-		       	<sec:authorize access="hasAnyRole('MASTER', 'DEVELOPER')">
+	        	<!-- NOT WORKING -->	        	
+		       	<sec:authorize access="hasRole('MASTER')">
 					<h2>MASTER LOGIN</h2>
 		       	</sec:authorize>
 	        	<hr>
@@ -46,7 +47,7 @@
 					<a href="/beforeSignUp">회원가입</a><br>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
-					<sec:authentication property="principal" var="principal"/>
+					
 						<div class="box auto">
 							<p>${principal}</p>
 						</div>

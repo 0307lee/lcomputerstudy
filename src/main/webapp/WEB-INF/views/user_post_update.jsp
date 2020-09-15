@@ -16,6 +16,7 @@
 		<c:forEach var="board" items="${list_BoardVO}">
 			<input type="hidden" name="bId" value="${board.bId}">
 			<input type="hidden" name="bWriter" value="${board.bWriter}">
+			<input type="hidden" name="uId" value="${board.uId}">
 	    	<table width="600" border="1" bordercolor="yellow" bgcolor="orange">
 		        <tr heignt="40">
 	                <td align="center">글번호</td>
@@ -55,9 +56,11 @@
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>
 
 <script>
-$(document).on('click', '#btn-write', function () {
-	$('#frm-write').submit();
-});
+	$(document).on('click', '#btn-write', function () {
+		$('#frm-write').submit();
+	});
+	//docu내의 btn을 클릭하면
+	//	form(=frm-write)가 실행된다
 </script>
 
 

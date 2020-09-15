@@ -93,7 +93,7 @@ public class Controller {
 	@Secured({"ROLE_USER"})
 	@RequestMapping(value= "/user/post_write_process")
 	public String writePostProcess(BoardVO post) {
-		//Writing
+		//Writing(duplicate Update)
 		boardservice.writePostProcess(post);
 		return "redirect:/";
 	}
@@ -120,20 +120,10 @@ public class Controller {
 		model.addAttribute("list_BoardVO", list);
 		return "/user_post_update";
 	}
-	
+		
 	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/update/process")
-	public String updatePostProcess(BoardVO post) {
-		//Writing(if Has
-		boardservice.writePostProcess(post);
-		return "redirect:/user/post/"+post.getbId();
-	}
-	
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/delete/process/{bId}")
+	@RequestMapping(value= "/user/post/delete/process")
 	public String deletePostProcess(BoardVO post) {
-		//Writing(if Has
-		boardservice.writePostProcess(post);
 		boardservice.deletePostProcess(post);
 		return "redirect:/";
 	}

@@ -33,9 +33,7 @@
             <tr>
                 <td align="center" >글 내용</td>
                 <td>
-	                <textarea rows="10" cols="50" name="bContent" placeholder="   내용 입력">
-	                	${board.bContent}
-	                </textarea>
+					${board.bContent}
                 </td>
             </tr>
 		</table><hr>
@@ -51,9 +49,17 @@
 				<a href="/user/post/update/${board.bId}">(권한 제한 필요)수정하기1</a>
 			</div>
 			
-			<div class="col-md-4" id="delete">
-				<a href="/user/post/Delete/${board.bId}">(권한 제한 필요)삭제하기</a>
-			</div>
+			
+			<form action="/user/post_delete" method="post" id="frm-delete">
+				<input type="hidden" name="bId"		value="${board.bId}">
+				<input type="hidden" name="bId"		value="${board.bTitle}">
+				<input type="hidden" name="bId"		value="${board.bContent}">
+				<input type="hidden" name="bWriter"	value="${board.bWriter}">
+				<input type="hidden" name="uId"		value="${board.uId}">
+				<div class="col-md-4" id="delete">
+					<button id="btn-delete">삭제</button>
+				</div>
+			</form>
       	</sec:authorize>
        	
        	<!-- First GOTO index HeadLine contents-->
@@ -65,3 +71,14 @@
 	</c:forEach>
 			
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>
+
+
+<script>
+	$(document).on('click', '#btn-delete', function () {
+		$('#frm-delete').submit();
+	});
+	//docu내의 btn을 클릭하면
+	//	form(=frm-write)가 실행된다
+</script>
+
+
