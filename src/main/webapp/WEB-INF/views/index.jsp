@@ -17,8 +17,12 @@
 	        	<br>
 	        	<!-- NOT WORKING -->	        	
 		       	<sec:authorize access="hasRole('MASTER')">
-					<h2>MASTER LOGIN</h2>
+					MASTER LOGIN
 		       	</sec:authorize>
+		       	<sec:authorize access="hasRole('ROLE_USER')">
+				    Manage Users
+				</sec:authorize>
+				asd
 	        	<hr>
 	        	<h4>TO DO LIST</h4>
 				1 SW_basic<br>&nbsp;
