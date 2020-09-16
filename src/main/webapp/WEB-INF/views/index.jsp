@@ -38,6 +38,20 @@
 				2 HW?? SW??<br>&nbsp;
 					간단한것부터하자. 내 앞에 놓인것 일단 쳐내고. 카테고리도 분류하고<br>&nbsp;
 				<br>&nbsp;
+				 <div class="row Well">
+				sample demo page menu 내가 할 것만 <br>&nbsp;<br>&nbsp;
+					영카트<br>&nbsp;<br>&nbsp;
+					고도몰<br>&nbsp;
+					
+					화면 UI를 기능 잡기<br>&nbsp;
+					
+					1. 목업<br>&nbsp;
+						화면 미리 가상<br>&nbsp;
+						ovenapp.io<br>&nbsp;
+						xd (adobe)<br>&nbsp;
+							프레젠트 위키깃<br>&nbsp;
+				</div>
+				
 				<hr>
 				<h4>AS IS LIST</h4><br>&nbsp;
 					헤더, 푸터 분리 완<br>&nbsp;
