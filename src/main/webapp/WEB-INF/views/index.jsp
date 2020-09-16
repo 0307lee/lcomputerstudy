@@ -26,7 +26,7 @@
 	        	<hr>
 	        	<h4>TO DO LIST</h4>
 				1 SW_basic<br>&nbsp;
-							CRUD <br>&nbsp;
+							
 							기획 (쇼핑몰 여행사 결제 랭킹 정산 ) <br>&nbsp;
 							설계 <br>&nbsp;
 							개발 <br>&nbsp;
@@ -43,6 +43,7 @@
 					헤더, 푸터 분리 완<br>&nbsp;
 					뷰 추가 완<br>&nbsp;
 					rename.User>>UserVO 완료 (재부팅이 답)<br>&nbsp;
+					CRUD 1차 완료 (권한 읽기 조금 이상) <br>&nbsp;
 				<hr>
 			</div>
 	        <div class="Login col-md-3">
