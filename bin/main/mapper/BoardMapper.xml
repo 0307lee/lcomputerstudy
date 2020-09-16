@@ -9,7 +9,8 @@
 				b_datetime	as bDateTime,
 				b_disabled	as bDisabled
 		FROM	lc_board
-		WHERE	b_id	IS NOT NULL;
+		WHERE	b_id	IS NOT NULL
+		AND		b_disabled=0;
 	</select>
 	<select id="getBoardListCount" resultType="int">
 		SELECT	count(b_id) as b_cnt_id
