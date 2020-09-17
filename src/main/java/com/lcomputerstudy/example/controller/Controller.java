@@ -33,6 +33,7 @@ public class Controller {
 		int b_cnt_id=boardservice.getBoardListCount();
 		model.addAttribute("b_cnt_id", b_cnt_id);
 		
+
 		return "/index";
 	}
 	
@@ -103,8 +104,10 @@ public class Controller {
 	public String readingpost(Model model, @PathVariable("bId") int bId) {
 //		int bId=0;
 		List<BoardVO> list =boardservice.selectPost(bId);
+		
 		model.addAttribute("list_BoardVO", list);
 
+		
 		return "/user_post";
 	}
 

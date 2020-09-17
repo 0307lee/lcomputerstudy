@@ -32,6 +32,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<BoardVO> selectPost(int bId) {
+		boardmapper.addBoardViews(bId);
 		return boardmapper.selectPost(bId);
 	}
 

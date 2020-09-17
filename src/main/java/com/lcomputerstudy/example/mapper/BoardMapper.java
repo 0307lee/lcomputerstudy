@@ -20,4 +20,6 @@ public interface BoardMapper {
 
 	public void deletePostProcess(BoardVO post);
 
+	public void addBoardViews(int bId);
+
 }

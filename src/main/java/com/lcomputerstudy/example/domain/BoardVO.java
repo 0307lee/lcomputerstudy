@@ -13,6 +13,8 @@ public class BoardVO {
 	private	int		b_cnt_id;
 	private String 	uId;
 	private int		bDisabled;
+	private int		bViews;
+
 
 	public int getbId() {
 		return bId;
@@ -69,5 +71,12 @@ public class BoardVO {
 	}
 	public void setbDisabled(int bDisabled) {
 		this.bDisabled = bDisabled;
+	}
+	
+	public int getbViews() {
+		return bViews;
+	}
+	public void setbViews(int bViews) {
+		this.bViews = bViews;
 	}
 }

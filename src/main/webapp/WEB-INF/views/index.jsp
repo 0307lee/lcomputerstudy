@@ -22,7 +22,6 @@
 		       	<sec:authorize access="hasRole('ROLE_USER')">
 				    Manage Users
 				</sec:authorize>
-				asd
 	        	<hr>
 	        	<h4>TO DO LIST</h4>
 				1 SW_basic<br>&nbsp;
@@ -51,14 +50,6 @@
 						xd (adobe)<br>&nbsp;
 							프레젠트 위키깃<br>&nbsp;
 				</div>
-				
-				<hr>
-				<h4>AS IS LIST</h4><br>&nbsp;
-					헤더, 푸터 분리 완<br>&nbsp;
-					뷰 추가 완<br>&nbsp;
-					rename.User>>UserVO 완료 (재부팅이 답)<br>&nbsp;
-					CRUD 1차 완료 (권한 읽기 조금 이상) <br>&nbsp;
-				<hr>
 			</div>
 	        <div class="Login col-md-3">
 	        	<sec:authorize access="isAnonymous()">
@@ -125,7 +116,7 @@
 							<th width="50%">Title</th>	
 							<th width="10%">Writer</th>
 							<th width="20%">Date</th>
-							<th width="10%">View</th>
+							<th width="10%">Views</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -137,7 +128,7 @@
 								</td>
 								<td>${board.bWriter}</td>
 								<td>${board.bDateTime}</td>
-								<td>(미구현)조회수</td>
+								<td>${board.bViews}</td>
 							<tr>
 						</c:forEach>
 					</tbody>
@@ -151,5 +142,17 @@
 					<img src="https://www.w3schools.com/html/img_girl.jpg" alt="girl" width="100" height="33">
 				</div>
 	        </div>
+	    </div>
+	    <div class="row Well">
+	        <div class="AS NOW col-md-9">
+	        	<br>
+
+				<h4>AS NOW LIST</h4><br>&nbsp;
+					헤더, 푸터 분리 완<br>&nbsp;
+					뷰 추가 완<br>&nbsp;
+					rename.User>>UserVO 완료 (재부팅이 답)<br>&nbsp;
+					CRUD 1차 완료 (권한 읽기 조금 이상) <br>&nbsp;
+				<hr>
+			</div>
 	    </div>
 <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>

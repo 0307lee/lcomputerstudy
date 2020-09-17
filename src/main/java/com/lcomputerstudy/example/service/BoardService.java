@@ -16,5 +16,4 @@ public interface BoardService {
 
 	public void deletePostProcess(BoardVO post);
 
-	
 }

@@ -20,7 +20,7 @@
             </tr>
             <tr>
                 <td align="center">조회수</td>
-                <td>(미구현)조회수</td>
+                <td>${board.bViews}</td>
             </tr>
             <tr>
                 <td align="center">작성자</td>
@@ -35,9 +35,6 @@
                 <td>
 					${board.bContent}
                 </td>
-            </tr>
-            <tr>
-            	<td>${board.bDisabled}</td>
             </tr>
 		</table><hr>
 		<div class="col-md-4" id="home">
