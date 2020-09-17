@@ -16,7 +16,7 @@
 	        <div class="page info col-md-9">
 	        	<br>
 	        	<!-- NOT WORKING -->	        	
-		       	<sec:authorize access="hasRole('MASTER')">
+		       	<sec:authorize access="hasRole('ROLE_MASTER')">
 					MASTER LOGIN
 		       	</sec:authorize>
 		       	<sec:authorize access="hasRole('ROLE_USER')">
