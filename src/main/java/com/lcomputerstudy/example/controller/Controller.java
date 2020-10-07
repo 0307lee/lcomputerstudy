@@ -21,114 +21,114 @@ import com.lcomputerstudy.example.service.UserService;
 @org.springframework.stereotype.Controller
 public class Controller {
 
-	private final Logger logger =LoggerFactory.getLogger(this.getClass());
-	@Autowired BoardService boardservice;
-	@Autowired UserService userservice;
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+	BoardService boardservice;
+	@Autowired
+	UserService userservice;
 
 	@RequestMapping("/")
 	public String home(Model model) {
-		List<BoardVO> list =boardservice.selectBoardList();
+		List<BoardVO> list = boardservice.selectBoardList();
 		model.addAttribute("list_BoardVO", list);
-		
-		int b_cnt_id=boardservice.getBoardListCount();
+
+		int b_cnt_id = boardservice.getBoardListCount();
 		model.addAttribute("b_cnt_id", b_cnt_id);
-		
 
 		return "/index";
 	}
-	
+
 	@RequestMapping("/beforeSignUp")
 	public String beforeSignUp() {
 		return "/signup";
 	}
-	
+
 	@RequestMapping("/signup")
 	public String signup(UserVO user) {
-		//encoding PW
-		String encodedPassword =new BCryptPasswordEncoder().encode(user.getPassword());
-		
-		//Setting UserData
+		// encoding PW
+		String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+
+		// Setting UserData
 		user.setPassword(encodedPassword);
 		user.setAccoutNonExpired(true);
 		user.setEnabled(true);
 		user.setAccountNonLocked(true);
 		user.setCredentialNonExpired(true);
 		user.setAuthorities(AuthorityUtils.createAuthorityList("ROLE_USER"));
-		
-		//Creating User
+
+		// Creating User
 		userservice.createUser(user);
-		//Creating Auth
+		// Creating Auth
 		userservice.createAuthorities(user);
-		
+
 		return "/login";
 	}
-	
-	@RequestMapping(value= "/login")
+
+	@RequestMapping(value = "/login")
 	public String beforeLogin(Model model) {
 		return "/login";
 	}
-	
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value="/user/info")
+
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/user/info")
 	public String userinfo(Model model) {
 		return "/user_info";
 	}
-	
-	@RequestMapping(value= "/denied")
+
+	@RequestMapping(value = "/denied")
 	public String denied(Model model) {
 		return "/denied";
 	}
 
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/chart")
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/chart")
 	public String chart(Model model) {
 		return "/chart";
 	}
 
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post_write")
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/user/post_write")
 	public String Call_writePost_JSP(Model model) {
 		return "/user_post_write";
 	}
 
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post_write_process")
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/user/post_write_process")
 	public String writePostProcess(BoardVO post) {
-		//Writing(duplicate Update)
+		// Writing(duplicate Update)
 		boardservice.writePostProcess(post);
 		return "redirect:/";
 	}
-	
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/{bId}", method = RequestMethod.GET)
+
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/user/post/{bId}", method = RequestMethod.GET)
 	public String readingpost(Model model, @PathVariable("bId") int bId) {
 //		int bId=0;
-		List<BoardVO> list =boardservice.selectPost(bId);
-		
+		List<BoardVO> list = boardservice.selectPost(bId);
+
 		model.addAttribute("list_BoardVO", list);
 
-		
 		return "/user_post";
 	}
 
-	//Access Only Same U_id
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post/update/{bId}")
+	// Access Only Same U_id
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/user/post/update/{bId}")
 	public String Call_updatePost_JSP(Model model, @PathVariable("bId") int bId) {
-		List<BoardVO> list =boardservice.selectPost(bId);
+		List<BoardVO> list = boardservice.selectPost(bId);
 		model.addAttribute("list_BoardVO", list);
 		return "/user_post_update";
 	}
-		
-	@Secured({"ROLE_USER"})
-	@RequestMapping(value= "/user/post_delete")
+
+	@Secured({ "ROLE_USER" })
+	@RequestMapping(value = "/user/post_delete")
 	public String deletePostProcess(BoardVO post) {
 		boardservice.deletePostProcess(post);
 
 		logger.debug("debug");
 		logger.info("info");
 		logger.error("error");
-		
+
 		return "redirect:/";
 	}
 }
